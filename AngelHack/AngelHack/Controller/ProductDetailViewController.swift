@@ -16,8 +16,9 @@ class ProductDetailViewController: UIViewController {
   
   let productImageView = DetailProductImageCustomView()
   let productInfoView = ProductInfoView()
+  let productDetailReasonView = ProductDetailReasonView()
   
-  lazy var productViewArr = [productImageView, productInfoView]
+  lazy var productViewArr = [productImageView, productInfoView, productDetailReasonView]
   
   // MARK: - LifeCycle
   
@@ -35,7 +36,7 @@ class ProductDetailViewController: UIViewController {
   
   private func setTableView() {
     detailTableVIew.dataSource = self
-    detailTableVIew.rowHeight = view.frame.height / 3
+    detailTableVIew.allowsSelection = false
     detailTableVIew.register(DetailProductTableViewCell.self, forCellReuseIdentifier: "Custom")
   }
   
@@ -62,14 +63,23 @@ class ProductDetailViewController: UIViewController {
 extension ProductDetailViewController: UITableViewDataSource {
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     productViewArr.count
-
+    
   }
-
+  
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let detailCell = detailTableVIew.dequeueReusableCell(withIdentifier: "Custom", for: indexPath) as! DetailProductTableViewCell
     detailCell.productView = productViewArr[indexPath.row]
-    return detailCell
     
+    switch indexPath.row {
+    case 0:
+      detailTableVIew.rowHeight = 700
+    case 1:
+      detailTableVIew.rowHeight = 225
+    case 2:
+      detailTableVIew.rowHeight = 300
+    default:
+      break
+    }
+    return detailCell
   }
 }
-

@@ -22,6 +22,14 @@ class ProductDetailReasonView: UIView {
     return label
   }()
   
+  let sellerInquiryButton: UIButton = {
+    let button = UIButton()
+    button.setTitle("판매자에게 문의하기", for: .normal)
+    button.setTitleColor(.systemGray, for: .normal)
+    button.backgroundColor = .systemGray3
+    return button
+  }()
+  
   
   // MARK: - init View
   
@@ -38,18 +46,26 @@ class ProductDetailReasonView: UIView {
   func setUI() {
     
     let selfGuide = self.safeAreaLayoutGuide
+    let buttonHeight: CGFloat = 50
     
-    [detailReasonView, reasonLabel].forEach {
+    [detailReasonView, reasonLabel, sellerInquiryButton].forEach {
       self.addSubview($0)
       $0.translatesAutoresizingMaskIntoConstraints = false
     }
     NSLayoutConstraint.activate([
       detailReasonView.topAnchor.constraint(equalTo: selfGuide.topAnchor),
       detailReasonView.leadingAnchor.constraint(equalTo: selfGuide.leadingAnchor),
-      detailReasonView
-    
+      detailReasonView.trailingAnchor.constraint(equalTo: selfGuide.trailingAnchor),
+      detailReasonView.bottomAnchor.constraint(equalTo: selfGuide.bottomAnchor, constant: -buttonHeight),
+      
+      sellerInquiryButton.topAnchor.constraint(equalTo: detailReasonView.bottomAnchor),
+      sellerInquiryButton.leadingAnchor.constraint(equalTo: selfGuide.leadingAnchor),
+      sellerInquiryButton.trailingAnchor.constraint(equalTo: selfGuide.trailingAnchor),
+      sellerInquiryButton.bottomAnchor.constraint(equalTo: selfGuide.bottomAnchor),
+      
+      
+      reasonLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+      reasonLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor)
     ])
-    
   }
-  
 }
