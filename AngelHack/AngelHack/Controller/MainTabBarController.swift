@@ -11,10 +11,11 @@ import UIKit
 final class MainTabBarController: UITabBarController {
   // MARK: - Property
   
-  let mainVC = MainViewController()
-  let chattingVC = ChattingViewController()
-  let noticeVC = NoticeViewController()
-  let myPageVC = MyPageViewController()
+  let naviMainVC = UINavigationController(rootViewController: MainViewController())
+  let naviChattingVC = UINavigationController (rootViewController: ChattingViewController())
+  let naviNoticeVC = UINavigationController (rootViewController: NoticeViewController())
+  let naviMyPageVC = UINavigationController (rootViewController: MyPageViewController())
+  
   
   // MARK: - LifeCycle
   
@@ -29,11 +30,11 @@ final class MainTabBarController: UITabBarController {
   func setTabBar() {
     view.backgroundColor = .systemBackground
     
-    mainVC.tabBarItem = UITabBarItem(title: "홈", image: UIImage(systemName: "house.fill"), tag: 0)
-    chattingVC.tabBarItem = UITabBarItem(title: "채팅", image: UIImage(systemName: "message.fill"), tag: 1)
-    noticeVC.tabBarItem = UITabBarItem(title: "알림", image: UIImage(systemName: "info.circle.fill"), tag: 2)
-    myPageVC.tabBarItem = UITabBarItem(title: "마이페이지", image: UIImage(systemName: "person.circle.fill"), tag: 3)
+    naviMainVC.tabBarItem = UITabBarItem(title: "홈", image: UIImage(systemName: "house.fill"), tag: 0)
+    naviChattingVC.tabBarItem = UITabBarItem(title: "채팅", image: UIImage(systemName: "message.fill"), tag: 1)
+    naviNoticeVC.tabBarItem = UITabBarItem(title: "알림", image: UIImage(systemName: "info.circle.fill"), tag: 2)
+    naviMyPageVC.tabBarItem = UITabBarItem(title: "마이페이지", image: UIImage(systemName: "person.circle.fill"), tag: 3)
     
-    viewControllers = [mainVC, chattingVC, noticeVC, myPageVC]
+    viewControllers = [naviMainVC, naviChattingVC, naviNoticeVC, naviMyPageVC]
   }
 }

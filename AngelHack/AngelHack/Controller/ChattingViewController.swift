@@ -12,7 +12,9 @@ class ChattingViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    
     view.backgroundColor = .systemIndigo
     
   }
+
 }

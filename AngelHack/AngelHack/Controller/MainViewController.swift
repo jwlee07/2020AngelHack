@@ -24,15 +24,23 @@ class MainViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    
+    setNaviHidden()
     setMainViewUI()
     setTopViewUI()
 //    setTableViewUI()
     
   }
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+    setNaviHidden()
+  }
   
   // MARK: - Setup Layout
   
+  private func setNaviHidden() {
+    navigationController?.navigationBar.isHidden = true
+  }
+
   private func setTopViewUI() {
     
     let viewHeight = view.frame.height
