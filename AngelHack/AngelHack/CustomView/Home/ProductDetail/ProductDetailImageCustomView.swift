@@ -8,20 +8,25 @@
 
 import UIKit
 
-class DetailProductImageCustomView: UIView {
+class ProductDetailImageCustomView: UIView {
   
   // MARK: - Property
   
   var detailScrollView = UIScrollView()
-  var productImageArr = [UIColor.systemRed, UIColor.systemBlue, UIColor.systemIndigo, UIColor.systemPink]
+  var productImageArr = ["토마토_1", "토마토_2", "토마토_3"].compactMap {
+    UIImage.init(named: $0)
+  }
   var productImageViewArr = [UIImageView]()
-  let productLikeButton: UIButton = {
+  let pageControl = UIPageControl()
+  
+  let symbolSize = UIImage.SymbolConfiguration(pointSize: 24)
+  
+  lazy var dismissButton: UIButton = {
     let button = UIButton()
-    button.setImage(UIImage(systemName: "heart"), for: .normal)
-    button.tintColor = .systemGray
+    button.setImage(UIImage(systemName: "arrow.left", withConfiguration: symbolSize), for: .normal)
+    button.tintColor = .white
     return button
   }()
-  let pageControl = UIPageControl()
   
   // MARK: - init View
   
@@ -54,10 +59,8 @@ class DetailProductImageCustomView: UIView {
     
     let selfGuide = self.safeAreaLayoutGuide
     let margin: CGFloat = 10
-    let buttonSize: CGFloat = 50
-    
-    
-    [detailScrollView, productLikeButton, pageControl].forEach {
+
+    [detailScrollView, pageControl, dismissButton].forEach {
       self.addSubview($0)
       $0.translatesAutoresizingMaskIntoConstraints = false
     }
@@ -68,20 +71,18 @@ class DetailProductImageCustomView: UIView {
       detailScrollView.trailingAnchor.constraint(equalTo: selfGuide.trailingAnchor),
       detailScrollView.bottomAnchor.constraint(equalTo: selfGuide.bottomAnchor),
       
-      productLikeButton.bottomAnchor.constraint(equalTo: selfGuide.bottomAnchor, constant: -margin),
-      productLikeButton.trailingAnchor.constraint(equalTo: selfGuide.trailingAnchor, constant: -margin),
-      productLikeButton.widthAnchor.constraint(equalToConstant: buttonSize),
-      productLikeButton.heightAnchor.constraint(equalToConstant: buttonSize),
-      
       pageControl.leadingAnchor.constraint(equalTo: selfGuide.leadingAnchor),
       pageControl.trailingAnchor.constraint(equalTo: selfGuide.trailingAnchor),
-      pageControl.bottomAnchor.constraint(equalTo: selfGuide.bottomAnchor, constant: -margin)
+      pageControl.bottomAnchor.constraint(equalTo: selfGuide.bottomAnchor, constant: -margin),
+      
+      dismissButton.topAnchor.constraint(equalTo: selfGuide.topAnchor, constant: margin),
+      dismissButton.leadingAnchor.constraint(equalTo: selfGuide.leadingAnchor, constant: margin)
     ])
     
     for product in productImageArr {
       
       let detailImageView = UIImageView()
-      detailImageView.backgroundColor = product
+      detailImageView.image = product
       productImageViewArr.append(detailImageView)
       detailScrollView.addSubview(detailImageView)
       
@@ -115,7 +116,7 @@ class DetailProductImageCustomView: UIView {
 
 // MARK: -
 
-extension DetailProductImageCustomView: UIScrollViewDelegate {
+extension ProductDetailImageCustomView: UIScrollViewDelegate {
   func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
     let pageNumber = round(scrollView.contentOffset.x / scrollView.frame.width)
     pageControl.currentPage = Int(pageNumber)

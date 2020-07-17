@@ -14,7 +14,8 @@ class ProductInfoView: UIView {
   
   let productName: UILabel = {
     let label = UILabel()
-    label.text = "상품명"
+    label.text = "오늘 수확한 토마토 팝니다."
+    label.font = UIFont.boldSystemFont(ofSize: 20)
     return label
   }()
   
@@ -42,11 +43,10 @@ class ProductInfoView: UIView {
   
   let sellerInfoView: UIView = {
     let view = UIView()
-    view.backgroundColor = .systemGray5
     return view
   }()
   
-  let sellerImageView: UIImageView = {
+  var sellerImageView: UIImageView = {
     let imageView = UIImageView()
     imageView.backgroundColor = .systemGray3
     return imageView
@@ -54,14 +54,21 @@ class ProductInfoView: UIView {
   
   var sellerName: UILabel = {
     let label = UILabel()
-    label.text = "판매자 닉네임"
+    label.text = "멋쟁이 농부"
     label.shadowColor = .black
     return label
   }()
   
   var sellerMapName: UILabel = {
     let label = UILabel()
-    label.text = "농장이름"
+    label.text = "드넓은 농장"
+    return label
+  }()
+  
+  var sellerScore: UILabel = {
+    let label = UILabel()
+    label.text = "4.5"
+    label.textColor = UIColor(red: 0, green: 0.698, blue: 0.525, alpha: 1)
     return label
   }()
   
@@ -90,9 +97,9 @@ class ProductInfoView: UIView {
     let minMargin: CGFloat = 5
     let sellerViewHeight: CGFloat = 100
     
-    unitImageView.image = UIImage(named: "단위")
-    priceImageView.image = UIImage(named: "가격")
-    deadlineImageView.image = UIImage(named: "마감일")
+    unitImageView.image = UIImage(named: "단위")?.withTintColor(UIColor(red: 0, green: 0.698, blue: 0.525, alpha: 1))
+    priceImageView.image = UIImage(named: "가격")?.withTintColor(UIColor(red: 0, green: 0.698, blue: 0.525, alpha: 1))
+    deadlineImageView.image = UIImage(named: "마감일")?.withTintColor(UIColor(red: 0, green: 0.698, blue: 0.525, alpha: 1))
     
     [productName, unitImageView, priceImageView, deadlineImageView, unitLabel, priceLabel, deadlineLabel, sellerInfoView].forEach {
       self.addSubview($0)
@@ -135,26 +142,31 @@ class ProductInfoView: UIView {
   }
   private func sellerInfoUI() {
     
-    let imageSize: CGFloat = 100
+    let imageSize: CGFloat = 50
     let margin: CGFloat = 15
     let minMargin: CGFloat = 5
     
-    [sellerImageView, sellerName, sellerMapName].forEach {
+    sellerImageView.image = UIImage(named: "진욱이")
+    
+    [sellerImageView, sellerName, sellerMapName, sellerScore].forEach {
       sellerInfoView.addSubview($0)
       $0.translatesAutoresizingMaskIntoConstraints = false
     }
     
     NSLayoutConstraint.activate([
-      sellerImageView.topAnchor.constraint(equalTo: sellerInfoView.topAnchor, constant: minMargin),
       sellerImageView.leadingAnchor.constraint(equalTo: sellerInfoView.leadingAnchor, constant: minMargin),
-      sellerImageView.bottomAnchor.constraint(equalTo: sellerInfoView.bottomAnchor, constant: -minMargin),
+      sellerImageView.centerYAnchor.constraint(equalTo: sellerInfoView.centerYAnchor),
       sellerImageView.widthAnchor.constraint(equalToConstant: imageSize),
+      sellerImageView.heightAnchor.constraint(equalToConstant: imageSize),
       
-      sellerName.topAnchor.constraint(equalTo: sellerInfoView.topAnchor, constant: margin),
+      sellerName.centerYAnchor.constraint(equalTo: sellerInfoView.centerYAnchor , constant: -margin),
       sellerName.leadingAnchor.constraint(equalTo: sellerImageView.trailingAnchor, constant: margin),
       
-      sellerMapName.topAnchor.constraint(equalTo: sellerName.bottomAnchor, constant: minMargin),
-      sellerMapName.leadingAnchor.constraint(equalTo: sellerImageView.trailingAnchor, constant: margin)
+      sellerMapName.centerYAnchor.constraint(equalTo: sellerInfoView.centerYAnchor , constant: margin),
+      sellerMapName.leadingAnchor.constraint(equalTo: sellerImageView.trailingAnchor, constant: margin),
+      
+      sellerScore.trailingAnchor.constraint(equalTo: sellerInfoView.trailingAnchor, constant: -margin),
+      sellerScore.centerYAnchor.constraint(equalTo: sellerInfoView.centerYAnchor)
     ])
   }
 }

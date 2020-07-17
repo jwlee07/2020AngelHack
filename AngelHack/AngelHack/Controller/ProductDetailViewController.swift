@@ -14,11 +14,55 @@ class ProductDetailViewController: UIViewController {
   
   let detailTableVIew = UITableView()
   
-  let productImageView = DetailProductImageCustomView()
+  let productImageView = ProductDetailImageCustomView()
   let productInfoView = ProductInfoView()
   let productDetailReasonView = ProductDetailReasonView()
+  let sellerOtherProductView = SellerOtherProductView()
   
-  lazy var productViewArr = [productImageView, productInfoView, productDetailReasonView]
+  lazy var productViewArr = [productImageView, productInfoView, productDetailReasonView, sellerOtherProductView]
+  
+  let supportView: UIView = {
+    let view = UIView()
+    view.backgroundColor = UIColor(red: 0, green: 0.698, blue: 0.525, alpha: 1)
+    return view
+  }()
+  
+  let symbolSize = UIImage.SymbolConfiguration(pointSize: 24)
+  
+  lazy var likeButton: UIButton = {
+    let button = UIButton()
+    button.setImage(UIImage(systemName: "heart", withConfiguration: symbolSize), for: .normal)
+    button.tintColor = .white
+    return button
+  }()
+  
+  let fenceView: UIView = {
+    let view = UIView()
+    view.backgroundColor = .white
+    return view
+  }()
+  
+  let priceLabel: UILabel = {
+    let label = UILabel()
+    label.text = "15,000원"
+    label.textColor = .white
+    label.shadowColor = .white
+    label.font = UIFont.boldSystemFont(ofSize: 20)
+    return label
+  }()
+  
+  let chattingInquiryButton: UIButton = {
+    let button = UIButton()
+    button.setTitle("채팅으로 문의하기", for: .normal)
+    button.setTitleColor(.white, for: .normal)
+    button.layer.cornerRadius = 10
+    button.clipsToBounds = true
+    button.layer.borderWidth = 1
+    button.layer.borderColor = UIColor.white.cgColor
+    return button
+  }()
+  
+  
   
   // MARK: - LifeCycle
   
@@ -26,10 +70,18 @@ class ProductDetailViewController: UIViewController {
     super.viewDidLoad()
     setTableView()
     setUI()
+    setSuppoertView()
   }
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
     detailTableVIew.reloadData()
+  }
+  
+  override func viewDidLayoutSubviews() {
+    super.viewDidLayoutSubviews()
+    productInfoView.sellerImageView.layer.cornerRadius = productInfoView.sellerImageView.frame.width / 2
+    productInfoView.sellerImageView.clipsToBounds = true
+    
   }
   
   // MARK: - SetupLayout
@@ -38,23 +90,59 @@ class ProductDetailViewController: UIViewController {
     detailTableVIew.dataSource = self
     detailTableVIew.allowsSelection = false
     detailTableVIew.register(DetailProductTableViewCell.self, forCellReuseIdentifier: "Custom")
+
   }
-  
-  
+
   private func setUI() {
     
     let guide = view.safeAreaLayoutGuide
+    let buttonHeight: CGFloat = 50
     
-    view.addSubview(detailTableVIew)
-    detailTableVIew.translatesAutoresizingMaskIntoConstraints = false
+    [detailTableVIew, supportView].forEach {
+      view.addSubview($0)
+      $0.translatesAutoresizingMaskIntoConstraints = false
+      
+      $0.leadingAnchor.constraint(equalTo: guide.leadingAnchor).isActive = true
+      $0.trailingAnchor.constraint(equalTo: guide.trailingAnchor).isActive = true
+    }
     
     NSLayoutConstraint.activate([
       detailTableVIew.topAnchor.constraint(equalTo: guide.topAnchor),
-      detailTableVIew.leadingAnchor.constraint(equalTo: guide.leadingAnchor),
-      detailTableVIew.trailingAnchor.constraint(equalTo: guide.trailingAnchor),
-      detailTableVIew.bottomAnchor.constraint(equalTo: guide.bottomAnchor)
+      detailTableVIew.bottomAnchor.constraint(equalTo: guide.bottomAnchor, constant: -buttonHeight),
+      
+      supportView.topAnchor.constraint(equalTo: detailTableVIew.bottomAnchor),
+      supportView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
     ])
+  }
+  
+  private func setSuppoertView() {
     
+    let margin: CGFloat = 17
+    let maxMargin: CGFloat = 30
+    let minMargin: CGFloat = 15
+    let fenceWidth: CGFloat = 2
+    let viewWidth = view.frame.width
+  
+    [likeButton, fenceView, priceLabel, chattingInquiryButton].forEach {
+      supportView.addSubview($0)
+      $0.translatesAutoresizingMaskIntoConstraints = false
+      
+      $0.topAnchor.constraint(equalTo: supportView.topAnchor, constant: minMargin).isActive = true
+      $0.bottomAnchor.constraint(equalTo: supportView.bottomAnchor, constant: -minMargin).isActive = true
+      $0.centerYAnchor.constraint(equalTo: supportView.centerYAnchor).isActive = true
+    }
+    
+    NSLayoutConstraint.activate([
+      likeButton.leadingAnchor.constraint(equalTo: supportView.leadingAnchor, constant: margin),
+      
+      fenceView.leadingAnchor.constraint(equalTo: likeButton.trailingAnchor, constant: margin),
+      fenceView.widthAnchor.constraint(equalToConstant: fenceWidth),
+      
+      priceLabel.leadingAnchor.constraint(equalTo: fenceView.trailingAnchor, constant: margin),
+      
+      chattingInquiryButton.leadingAnchor.constraint(equalTo: priceLabel.trailingAnchor, constant: maxMargin),
+      chattingInquiryButton.widthAnchor.constraint(equalToConstant: viewWidth / 2.3)
+    ])
   }
 }
 
@@ -72,11 +160,13 @@ extension ProductDetailViewController: UITableViewDataSource {
     
     switch indexPath.row {
     case 0:
-      detailTableVIew.rowHeight = 700
+      detailTableVIew.rowHeight = 350
     case 1:
       detailTableVIew.rowHeight = 225
     case 2:
-      detailTableVIew.rowHeight = 300
+      detailTableVIew.rowHeight = 400
+    case 3:
+      detailTableVIew.rowHeight = 250
     default:
       break
     }
