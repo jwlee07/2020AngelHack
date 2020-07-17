@@ -12,6 +12,7 @@ class ProductResidentViewController: UIViewController {
   // MARK: - Property
   
   let productResidentTopView = ProductResidentTopView()
+  let productResidentCategorieView = ProductResidentCategorieView()
   
   let symbolSize = UIImage.SymbolConfiguration(pointSize: 24)
   
@@ -32,6 +33,7 @@ class ProductResidentViewController: UIViewController {
     let button = UIButton()
     button.setTitle("작성 완료", for: .normal)
     button.setTitleColor(.white, for: .normal)
+    button.backgroundColor = UIColor(red: 0, green: 0.698, blue: 0.525, alpha: 1)
     return button
   }()
   
@@ -49,11 +51,11 @@ class ProductResidentViewController: UIViewController {
     
     let guide = view.safeAreaLayoutGuide
     let margin: CGFloat = 10
-    let imageMargin: CGFloat = 100
+    let maxMargin: CGFloat = 100
+    let topViewHeight: CGFloat = 200
+    let buttonHeight: CGFloat = 72
     
-    
-    
-    [dismissButton, titleLabel, productResidentTopView].forEach {
+    [dismissButton, titleLabel, productResidentTopView, productResidentCategorieView, productResidentCompleteButton].forEach {
       view.addSubview($0)
       $0.translatesAutoresizingMaskIntoConstraints = false
     }
@@ -65,10 +67,21 @@ class ProductResidentViewController: UIViewController {
       titleLabel.topAnchor.constraint(equalTo: guide.topAnchor, constant: margin),
       titleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
       
-      productResidentTopView.topAnchor.constraint(equalTo: guide.topAnchor, constant: imageMargin),
+      productResidentTopView.topAnchor.constraint(equalTo: guide.topAnchor, constant: maxMargin),
       productResidentTopView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
       productResidentTopView.leadingAnchor.constraint(equalTo: guide.leadingAnchor),
-      productResidentTopView.trailingAnchor.constraint(equalTo: guide.trailingAnchor)
+      productResidentTopView.trailingAnchor.constraint(equalTo: guide.trailingAnchor),
+      productResidentTopView.heightAnchor.constraint(equalToConstant: topViewHeight),
+    
+      productResidentCategorieView.topAnchor.constraint(equalTo: productResidentTopView.bottomAnchor),
+      productResidentCategorieView.leadingAnchor.constraint(equalTo: guide.leadingAnchor),
+      productResidentCategorieView.trailingAnchor.constraint(equalTo: guide.trailingAnchor),
+      productResidentCategorieView.bottomAnchor.constraint(equalTo: guide.bottomAnchor, constant: -maxMargin),
+      
+      productResidentCompleteButton.leadingAnchor.constraint(equalTo: guide.leadingAnchor),
+      productResidentCompleteButton.trailingAnchor.constraint(equalTo: guide.trailingAnchor),
+      productResidentCompleteButton.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+      productResidentCompleteButton.heightAnchor.constraint(equalToConstant: buttonHeight)
     ])
   }
 }

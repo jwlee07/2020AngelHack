@@ -57,7 +57,7 @@ class LoginViewController: UIViewController {
     let button = UIButton()
     button.setTitle("로그인", for: .normal)
     button.setTitleColor(.white, for: .normal)
-    button.backgroundColor = .systemGray2
+    button.backgroundColor = UIColor(red: 0, green: 0.698, blue: 0.525, alpha: 1)
     button.layer.cornerRadius = 10
     button.clipsToBounds = true
     button.addTarget(self, action: #selector(didTapLoginButton), for: .touchUpInside)
