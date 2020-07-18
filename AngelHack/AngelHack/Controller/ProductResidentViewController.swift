@@ -20,6 +20,7 @@ class ProductResidentViewController: UIViewController {
     let button = UIButton()
     button.setImage(UIImage(systemName: "arrow.left", withConfiguration: symbolSize), for: .normal)
     button.tintColor = .darkGray
+    button.addTarget(self, action: #selector(didTapDismissButton), for: .touchUpInside)
     return button
   }()
   
@@ -34,6 +35,7 @@ class ProductResidentViewController: UIViewController {
     button.setTitle("작성 완료", for: .normal)
     button.setTitleColor(.white, for: .normal)
     button.backgroundColor = UIColor(red: 0, green: 0.698, blue: 0.525, alpha: 1)
+    button.addTarget(self, action: #selector(didTapDismissButton), for: .touchUpInside)
     return button
   }()
   
@@ -84,5 +86,10 @@ class ProductResidentViewController: UIViewController {
       productResidentCompleteButton.bottomAnchor.constraint(equalTo: view.bottomAnchor),
       productResidentCompleteButton.heightAnchor.constraint(equalToConstant: buttonHeight)
     ])
+  }
+  
+  // MARK: - Action Button
+  @objc func didTapDismissButton(_ sender: UIButton) {
+    navigationController?.popViewController(animated: true)
   }
 }

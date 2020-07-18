@@ -14,7 +14,6 @@ class ProductResidentCategorieView: UIView {
   let categorieTableView = UITableView()
   
   let categorieListArr = ["농/수산물", "감자", "5kg", "15,000원", "2020.07.30"]
-  let symbolSize = UIImage.SymbolConfiguration(pointSize: 24)
   let presentButtonImage = UIImage(systemName: "chevron.right")?.withTintColor(.darkGray, renderingMode: .alwaysOriginal)
   
   // MARK: - init View

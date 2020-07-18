@@ -59,7 +59,7 @@ class ProductResidentTopView: UIView {
     let textfieldHeight: CGFloat = 50
     let selfGuide = self.safeAreaLayoutGuide
     
-    productImageView.image = UIImage(named: "감자_1")
+    productImageView.image = UIImage(named: "못생긴감자_1")
     
     [productImageView, productCountLabel, productNameTextfield].forEach {
       self.addSubview($0)

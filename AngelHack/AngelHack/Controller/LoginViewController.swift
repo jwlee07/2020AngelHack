@@ -12,6 +12,8 @@ class LoginViewController: UIViewController {
   
   // MARK: - Property
   
+  private let loginImageView = UIImageView()
+  
   private let idTextfield: UITextField = {
     let textfield = UITextField()
     textfield.placeholder = "아이디를 입력해주세요."
@@ -57,8 +59,7 @@ class LoginViewController: UIViewController {
     let button = UIButton()
     button.setTitle("로그인", for: .normal)
     button.setTitleColor(.white, for: .normal)
-//    button.backgroundColor = UIColor(red: 0, green: 0.698, blue: 0.525, alpha: 1)
-    button.backgroundColor = .systemGray
+    button.backgroundColor = UIColor(red: 0, green: 0.698, blue: 0.525, alpha: 1)
     button.layer.cornerRadius = 10
     button.clipsToBounds = true
     button.addTarget(self, action: #selector(didTapLoginButton), for: .touchUpInside)
@@ -143,7 +144,7 @@ class LoginViewController: UIViewController {
     let margin: CGFloat = 10
     let minMargin: CGFloat = 5
     
-    [idTextfield, idUnderLine, passwordTextfield, passwordUnderLine, loginButton, lookAroundView, idPwSearchView, signInButoon].forEach {
+    [loginImageView, idTextfield, idUnderLine, passwordTextfield, passwordUnderLine, loginButton, lookAroundView, idPwSearchView, signInButoon].forEach {
       view.addSubview($0)
       $0.translatesAutoresizingMaskIntoConstraints = false
       
@@ -152,6 +153,10 @@ class LoginViewController: UIViewController {
     }
     
     NSLayoutConstraint.activate([
+      loginImageView.topAnchor.constraint(equalTo: guide.topAnchor),
+      loginImageView.bottomAnchor.constraint(equalTo: guide.bottomAnchor),
+      loginImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+      
       idTextfield.topAnchor.constraint(equalTo: guide.topAnchor, constant: viewHeight / 4),
       idTextfield.heightAnchor.constraint(equalToConstant: itemHeight),
       
