@@ -30,7 +30,7 @@ class ProductResidentTopView: UIView {
   
   let productNameTextfield: UITextField = {
     let textfield = UITextField()
-    textfield.text = "오늘 수확한 감자 팝니다."
+    textfield.placeholder = "글 제목"
     textfield.borderStyle = .roundedRect
     return textfield
   }()
