@@ -32,6 +32,8 @@ class MainViewController: UIViewController {
   
   func setMainViewUI() {
     
+    mainCollectionView.delegate = self
+    
     navigationController?.navigationBar.isHidden = true
     
     let guide = view.safeAreaLayoutGuide
@@ -63,5 +65,13 @@ class MainViewController: UIViewController {
     present(settingVC, animated: true)
   }
   
+}
+
+extension MainViewController: MainCollectionCustomViewDelegate {
+  func nextView() {
+    let productDetailViewController = ProductDetailViewController()
+    
+    navigationController?.pushViewController(productDetailViewController, animated: true)
+  }
 }
 
