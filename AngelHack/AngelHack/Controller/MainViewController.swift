@@ -17,7 +17,6 @@ class MainViewController: UIViewController {
   // MARK: - Property
   
   let customNavigationBarView = CustomNavigationBarView()
-  let mainTableView = MainTableCustomView()
   let collectionViewLayout = UICollectionViewFlowLayout()
   lazy var mainCollectionView = MainCollectionCustomView(frame: .zero, superViewWidth: view.frame.width, superViewHeight: view.frame.height)
   
