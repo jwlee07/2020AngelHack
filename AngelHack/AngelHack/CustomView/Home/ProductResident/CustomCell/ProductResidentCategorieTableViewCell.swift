@@ -41,8 +41,9 @@ class ProductResidentCategorieTableViewCell: UITableViewCell {
   func setCellUI() {
     
     let guide = contentView.safeAreaLayoutGuide
-    let margin: CGFloat = 10
-    let imageViewWidth: CGFloat = 20
+    let margin: CGFloat = 15
+    let imageMargin: CGFloat = 25
+    let imageViewWidth: CGFloat = 15
     
     [categorieLabel, categorieImageView].forEach {
       contentView.addSubview($0)
@@ -54,7 +55,7 @@ class ProductResidentCategorieTableViewCell: UITableViewCell {
     NSLayoutConstraint.activate([
       categorieLabel.leadingAnchor.constraint(equalTo: guide.leadingAnchor, constant: margin),
       
-      categorieImageView.trailingAnchor.constraint(equalTo: guide.trailingAnchor, constant: -imageViewWidth),
+      categorieImageView.trailingAnchor.constraint(equalTo: guide.trailingAnchor, constant: -imageMargin),
       categorieImageView.widthAnchor.constraint(equalToConstant: imageViewWidth)
     ])
   }

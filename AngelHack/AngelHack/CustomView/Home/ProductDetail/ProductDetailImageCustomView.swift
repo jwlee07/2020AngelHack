@@ -21,13 +21,6 @@ class ProductDetailImageCustomView: UIView {
   
   let symbolSize = UIImage.SymbolConfiguration(pointSize: 24)
   
-  lazy var dismissButton: UIButton = {
-    let button = UIButton()
-    button.setImage(UIImage(systemName: "arrow.left", withConfiguration: symbolSize), for: .normal)
-    button.tintColor = .white
-    return button
-  }()
-  
   // MARK: - init View
   
   override init(frame: CGRect) {
@@ -60,7 +53,7 @@ class ProductDetailImageCustomView: UIView {
     let selfGuide = self.safeAreaLayoutGuide
     let margin: CGFloat = 10
 
-    [detailScrollView, pageControl, dismissButton].forEach {
+    [detailScrollView, pageControl].forEach {
       self.addSubview($0)
       $0.translatesAutoresizingMaskIntoConstraints = false
     }
@@ -74,9 +67,6 @@ class ProductDetailImageCustomView: UIView {
       pageControl.leadingAnchor.constraint(equalTo: selfGuide.leadingAnchor),
       pageControl.trailingAnchor.constraint(equalTo: selfGuide.trailingAnchor),
       pageControl.bottomAnchor.constraint(equalTo: selfGuide.bottomAnchor, constant: -margin),
-      
-      dismissButton.topAnchor.constraint(equalTo: selfGuide.topAnchor, constant: margin),
-      dismissButton.leadingAnchor.constraint(equalTo: selfGuide.leadingAnchor, constant: margin)
     ])
     
     for product in productImageArr {
@@ -114,7 +104,7 @@ class ProductDetailImageCustomView: UIView {
   }
 }
 
-// MARK: -
+// MARK: - UIScrollViewDelegate
 
 extension ProductDetailImageCustomView: UIScrollViewDelegate {
   func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {

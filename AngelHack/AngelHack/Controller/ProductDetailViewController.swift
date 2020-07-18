@@ -21,6 +21,14 @@ class ProductDetailViewController: UIViewController {
   
   lazy var productViewArr = [productImageView, productInfoView, productDetailReasonView, sellerOtherProductView]
   
+  lazy var dismissButton: UIButton = {
+    let button = UIButton()
+    button.setImage(UIImage(systemName: "arrow.left", withConfiguration: symbolSize), for: .normal)
+    button.tintColor = .white
+    button.addTarget(self, action: #selector(didTapDismissButton), for: .touchUpInside)
+    return button
+  }()
+  
   let supportView: UIView = {
     let view = UIView()
     view.backgroundColor = UIColor(red: 0, green: 0.698, blue: 0.525, alpha: 1)
@@ -97,6 +105,7 @@ class ProductDetailViewController: UIViewController {
     
     let guide = view.safeAreaLayoutGuide
     let buttonHeight: CGFloat = 50
+    let margin: CGFloat = 10
     
     [detailTableVIew, supportView].forEach {
       view.addSubview($0)
@@ -112,6 +121,14 @@ class ProductDetailViewController: UIViewController {
       
       supportView.topAnchor.constraint(equalTo: detailTableVIew.bottomAnchor),
       supportView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+    ])
+    
+    view.addSubview(dismissButton)
+    dismissButton.translatesAutoresizingMaskIntoConstraints = false
+    
+    NSLayoutConstraint.activate([
+      dismissButton.topAnchor.constraint(equalTo: guide.topAnchor, constant: margin),
+      dismissButton.leadingAnchor.constraint(equalTo: guide.leadingAnchor, constant: margin)
     ])
   }
   
@@ -143,6 +160,11 @@ class ProductDetailViewController: UIViewController {
       chattingInquiryButton.leadingAnchor.constraint(equalTo: priceLabel.trailingAnchor, constant: maxMargin),
       chattingInquiryButton.widthAnchor.constraint(equalToConstant: viewWidth / 2.3)
     ])
+  }
+  
+  // MARK: - Action Button
+  @objc func didTapDismissButton(_ sender: UIButton) {
+    navigationController?.popViewController(animated: true)
   }
 }
 

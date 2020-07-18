@@ -19,7 +19,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     window?.rootViewController = LoginViewController()
     window?.makeKeyAndVisible()
     window?.backgroundColor = .systemBackground
-    
     return true
   }
 }

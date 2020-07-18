@@ -2,7 +2,7 @@
 //  MainCollectionViewCell.swift
 //  AngelHack
 //
-//  Created by 성단빈 on 2020/07/18.
+//  Created by 이진욱 on 2020/07/12.
 //  Copyright © 2020 jwlee. All rights reserved.
 //
 
@@ -134,4 +134,3 @@ class MainCollectionViewCell: UICollectionViewCell {
     ])
   }
 }
-
