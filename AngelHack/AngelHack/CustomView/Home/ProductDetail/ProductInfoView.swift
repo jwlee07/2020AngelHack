@@ -14,7 +14,7 @@ class ProductInfoView: UIView {
   
   let productName: UILabel = {
     let label = UILabel()
-    label.text = "오늘 수확한 토마토 팝니다."
+    label.text = "오늘 수확한 감자 팝니다."
     label.font = UIFont.boldSystemFont(ofSize: 20)
     return label
   }()

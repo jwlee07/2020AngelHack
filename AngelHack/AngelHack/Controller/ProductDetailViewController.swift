@@ -107,7 +107,7 @@ class ProductDetailViewController: UIViewController {
     }
     
     NSLayoutConstraint.activate([
-      detailTableVIew.topAnchor.constraint(equalTo: guide.topAnchor),
+      detailTableVIew.topAnchor.constraint(equalTo: view.topAnchor),
       detailTableVIew.bottomAnchor.constraint(equalTo: guide.bottomAnchor, constant: -buttonHeight),
       
       supportView.topAnchor.constraint(equalTo: detailTableVIew.bottomAnchor),
@@ -164,7 +164,7 @@ extension ProductDetailViewController: UITableViewDataSource {
     case 1:
       detailTableVIew.rowHeight = 225
     case 2:
-      detailTableVIew.rowHeight = 400
+      detailTableVIew.rowHeight = 250
     case 3:
       detailTableVIew.rowHeight = 250
     default:

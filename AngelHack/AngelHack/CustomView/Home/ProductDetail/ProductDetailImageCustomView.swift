@@ -13,7 +13,7 @@ class ProductDetailImageCustomView: UIView {
   // MARK: - Property
   
   var detailScrollView = UIScrollView()
-  var productImageArr = ["토마토_1", "토마토_2", "토마토_3"].compactMap {
+  var productImageArr = ["못생긴감자_1", "못생긴감자_2", "못생긴감자_3"].compactMap {
     UIImage.init(named: $0)
   }
   var productImageViewArr = [UIImageView]()
@@ -66,7 +66,7 @@ class ProductDetailImageCustomView: UIView {
     }
     
     NSLayoutConstraint.activate([
-      detailScrollView.topAnchor.constraint(equalTo: selfGuide.topAnchor),
+      detailScrollView.topAnchor.constraint(equalTo: self.topAnchor),
       detailScrollView.leadingAnchor.constraint(equalTo: selfGuide.leadingAnchor),
       detailScrollView.trailingAnchor.constraint(equalTo: selfGuide.trailingAnchor),
       detailScrollView.bottomAnchor.constraint(equalTo: selfGuide.bottomAnchor),
