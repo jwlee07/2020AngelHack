@@ -8,10 +8,14 @@
 
 import UIKit
 
+protocol MainCollectionCustomViewDelegate: class {
+  func nextView()
+}
+
 class MainCollectionCustomView: UIView {
   
   // MARK: - Property
-  
+  weak var delegate: MainCollectionCustomViewDelegate?
   let collectionViewLayout = UICollectionViewFlowLayout()
   lazy var collectionView = UICollectionView(frame: .zero, collectionViewLayout: collectionViewLayout)
   var superViewWidth: CGFloat = 0
@@ -50,6 +54,7 @@ class MainCollectionCustomView: UIView {
     
     collectionView.backgroundColor = .systemBackground
     collectionView.dataSource = self
+    collectionView.delegate = self
     collectionView.register(MainCollectionViewCell.self, forCellWithReuseIdentifier: "Custom")
     
   }
@@ -78,8 +83,14 @@ extension MainCollectionCustomView: UICollectionViewDataSource {
     cell.backgroundColor = .systemGray
     cell.layer.cornerRadius = 10
     cell.clipsToBounds = true
-    cell.productImageView.image = UIImage(named: "감자")
+    cell.productImageView.image = UIImage(named: "못생긴감자_3")
     return cell
+  }
+}
+
+extension MainCollectionCustomView: UICollectionViewDelegate {
+  func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {    
+    delegate?.nextView()
   }
 }
 

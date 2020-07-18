@@ -38,7 +38,7 @@ class FilterCollectionView: UIView {
     
     collectionView.translatesAutoresizingMaskIntoConstraints = false
     layout.scrollDirection = .horizontal
-//    layout.itemSize = CGSize(width: 100, height: 22)
+    
     collectionView.showsVerticalScrollIndicator = false
     collectionView.showsHorizontalScrollIndicator = false
     collectionView.dataSource = self
@@ -66,6 +66,7 @@ class FilterCollectionView: UIView {
 // MARK: - Extension
 extension FilterCollectionView: UICollectionViewDataSource {
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    
     return filterNames.count
   }
   
@@ -77,6 +78,7 @@ extension FilterCollectionView: UICollectionViewDataSource {
       cell.filterBtn.setTitleColor(UIColor(red: 0, green: 0.698, blue: 0.525, alpha: 1), for: .normal)
       cell.filterBtn.layer.borderColor = UIColor(red: 0, green: 0.698, blue: 0.525, alpha: 1).cgColor
     }
+    
     return cell
   }
 }

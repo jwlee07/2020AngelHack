@@ -17,7 +17,6 @@ class MainViewController: UIViewController {
   // MARK: - Property
   
   let customNavigationBarView = CustomNavigationBarView()
-  let mainTableView = MainTableCustomView()
   let collectionViewLayout = UICollectionViewFlowLayout()
   lazy var mainCollectionView = MainCollectionCustomView(frame: .zero, superViewWidth: view.frame.width, superViewHeight: view.frame.height)
   
@@ -32,6 +31,8 @@ class MainViewController: UIViewController {
   // MARK: - Setup Layout
   
   func setMainViewUI() {
+    
+    mainCollectionView.delegate = self
     
     navigationController?.navigationBar.isHidden = true
     
@@ -64,5 +65,13 @@ class MainViewController: UIViewController {
     present(settingVC, animated: true)
   }
   
+}
+
+extension MainViewController: MainCollectionCustomViewDelegate {
+  func nextView() {
+    let productDetailViewController = ProductDetailViewController()
+    
+    navigationController?.pushViewController(productDetailViewController, animated: true)
+  }
 }
 
