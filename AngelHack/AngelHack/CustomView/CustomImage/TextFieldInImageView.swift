@@ -21,8 +21,8 @@ class TextFieldInImageView: UIView {
     
     NSLayoutConstraint.activate([
       imageView.centerYAnchor.constraint(equalTo: centerYAnchor),
-      imageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
-      imageView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16)
+      imageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 8),
+      imageView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -8)
     ])
   }
   
@@ -30,3 +30,4 @@ class TextFieldInImageView: UIView {
     fatalError("init(coder:) has not been implemented")
   }
 }
+

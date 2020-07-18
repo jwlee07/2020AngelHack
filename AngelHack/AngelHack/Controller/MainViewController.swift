@@ -17,69 +17,43 @@ class MainViewController: UIViewController {
   // MARK: - Property
   
   let customNavigationBarView = CustomNavigationBarView()
-  let mainCollectionView = MainCollectionCustomView()
   let mainTableView = MainTableCustomView()
+  let collectionViewLayout = UICollectionViewFlowLayout()
+  lazy var mainCollectionView = MainCollectionCustomView(frame: .zero, superViewWidth: view.frame.width, superViewHeight: view.frame.height)
   
   // MARK: - LifeCycle
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    setNaviHidden()
-    setMainViewUI()
-    setTopViewUI()
-//    setTableViewUI()
     
-  }
-  override func viewWillAppear(_ animated: Bool) {
-    super.viewWillAppear(animated)
-    setNaviHidden()
+    setMainViewUI()
   }
   
   // MARK: - Setup Layout
   
-  private func setNaviHidden() {
+  func setMainViewUI() {
+    
     navigationController?.navigationBar.isHidden = true
-  }
-
-  private func setTopViewUI() {
     
-    let viewHeight = view.frame.height
+    let guide = view.safeAreaLayoutGuide
     
-    [customNavigationBarView].forEach {
+    view.addSubview(mainCollectionView)
+    [customNavigationBarView, mainCollectionView].forEach {
       view.addSubview($0)
       $0.translatesAutoresizingMaskIntoConstraints = false
-      
-      let guide = view.safeAreaLayoutGuide
-      
+    }
       NSLayoutConstraint.activate([
         customNavigationBarView.topAnchor.constraint(equalTo: guide.topAnchor),
         customNavigationBarView.leadingAnchor.constraint(equalTo: guide.leadingAnchor, constant: 10),
         customNavigationBarView.trailingAnchor.constraint(equalTo: guide.trailingAnchor, constant: -10),
-        customNavigationBarView.bottomAnchor.constraint(equalTo: guide.bottomAnchor, constant: -viewHeight / 4)
+        customNavigationBarView.heightAnchor.constraint(equalToConstant: view.frame.height / 3.6)
       ])
-    }
-  }
-  func setMainViewUI() {
-    
-    let mainChangeViewArr = [mainCollectionView, mainTableView]
-    
-    let guide = view.safeAreaLayoutGuide
-    let viewHeight = view.frame.height
-    let padding: CGFloat = 10
-    
-    
-    
-    
-    view.addSubview(mainCollectionView)
-    mainCollectionView.translatesAutoresizingMaskIntoConstraints = false
-    
-    mainCollectionView.leadingAnchor.constraint(equalTo: guide.leadingAnchor, constant: padding).isActive = true
-    mainCollectionView.trailingAnchor.constraint(equalTo: guide.trailingAnchor, constant: -padding).isActive = true
-    
     
     NSLayoutConstraint.activate([
-      mainCollectionView.topAnchor.constraint(equalTo: guide.topAnchor, constant: viewHeight / 6),
-      mainCollectionView.bottomAnchor.constraint(equalTo: guide.bottomAnchor)
+      mainCollectionView.topAnchor.constraint(equalTo: customNavigationBarView.bottomAnchor, constant: 10),
+      mainCollectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+      mainCollectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+      mainCollectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
     ])
   }
   
@@ -91,3 +65,4 @@ class MainViewController: UIViewController {
   }
   
 }
+
