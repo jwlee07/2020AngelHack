@@ -11,7 +11,6 @@ import UIKit
 
 class CustomNavigationBarView: UIView {
   // MARK: - Properties
-  let titleLable = UILabel()
   let subTitleLable = UILabel()
   let commentLabel = UILabel()
   let searchTextField = UITextField()
@@ -32,16 +31,10 @@ class CustomNavigationBarView: UIView {
   
   // MARK: - Layout
   private func setUI() {
-    [titleLable, subTitleLable, issueBtn, searchTextField, filterCollectionView].forEach {
+    [subTitleLable, issueBtn, searchTextField, filterCollectionView].forEach {
       addSubview($0)
       $0.translatesAutoresizingMaskIntoConstraints = false
     }
-    
-    titleLable.text = "B끗"
-    titleLable.frame = CGRect(x: 0, y: 0, width: 38, height: 20)
-    titleLable.backgroundColor = .white
-    titleLable.textColor = UIColor(red: 0, green: 0.698, blue: 0.525, alpha: 1)
-    titleLable.font = UIFont.init(name: "210Gulim-090", size: 24)
     
     subTitleLable.text = "B끗장터 ISSUE"
     subTitleLable.font = UIFont.init(name: "AppleSDGothicNeo-SemiBold", size: 26)
@@ -59,11 +52,7 @@ class CustomNavigationBarView: UIView {
   
   private func setLayout() {
     NSLayoutConstraint.activate([
-      titleLable.topAnchor.constraint(equalTo: topAnchor, constant: 8),
-      titleLable.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 168),
-      titleLable.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 168),
-      
-      subTitleLable.topAnchor.constraint(equalTo: titleLable.bottomAnchor, constant: 34),
+      subTitleLable.topAnchor.constraint(equalTo: topAnchor, constant: 54),
       subTitleLable.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 8),
       
       issueBtn.topAnchor.constraint(equalTo: subTitleLable.bottomAnchor, constant: 2),
