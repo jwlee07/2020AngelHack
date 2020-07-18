@@ -51,7 +51,8 @@ class ProductResidentViewController: UIViewController {
     
     let guide = view.safeAreaLayoutGuide
     let margin: CGFloat = 10
-    let maxMargin: CGFloat = 100
+    let topMargin: CGFloat = 100
+    let tableViewMargin: CGFloat = 150
     let topViewHeight: CGFloat = 200
     let buttonHeight: CGFloat = 72
     
@@ -67,7 +68,7 @@ class ProductResidentViewController: UIViewController {
       titleLabel.topAnchor.constraint(equalTo: guide.topAnchor, constant: margin),
       titleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
       
-      productResidentTopView.topAnchor.constraint(equalTo: guide.topAnchor, constant: maxMargin),
+      productResidentTopView.topAnchor.constraint(equalTo: guide.topAnchor, constant: topMargin),
       productResidentTopView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
       productResidentTopView.leadingAnchor.constraint(equalTo: guide.leadingAnchor),
       productResidentTopView.trailingAnchor.constraint(equalTo: guide.trailingAnchor),
@@ -76,7 +77,7 @@ class ProductResidentViewController: UIViewController {
       productResidentCategorieView.topAnchor.constraint(equalTo: productResidentTopView.bottomAnchor),
       productResidentCategorieView.leadingAnchor.constraint(equalTo: guide.leadingAnchor),
       productResidentCategorieView.trailingAnchor.constraint(equalTo: guide.trailingAnchor),
-      productResidentCategorieView.bottomAnchor.constraint(equalTo: guide.bottomAnchor, constant: -maxMargin),
+      productResidentCategorieView.bottomAnchor.constraint(equalTo: guide.bottomAnchor, constant: -tableViewMargin),
       
       productResidentCompleteButton.leadingAnchor.constraint(equalTo: guide.leadingAnchor),
       productResidentCompleteButton.trailingAnchor.constraint(equalTo: guide.trailingAnchor),
