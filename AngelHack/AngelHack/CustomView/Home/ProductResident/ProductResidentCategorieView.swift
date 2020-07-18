@@ -28,6 +28,7 @@ class ProductResidentCategorieView: UIView {
   }
   
   // MARK: - SetUp Layout
+  
   func setUI() {
     
     let selfGuide = self.safeAreaLayoutGuide

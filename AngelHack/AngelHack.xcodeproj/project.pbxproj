@@ -34,6 +34,8 @@
 		4943177E24BB2CE80032D125 /* MainTableCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4943177D24BB2CE80032D125 /* MainTableCustomView.swift */; };
 		4943178024BB32420032D125 /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4943177F24BB32420032D125 /* MainTableViewCell.swift */; };
 		4943178324BC15E10032D125 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4943178224BC15E10032D125 /* Data.swift */; };
+		496A5C5C24C2DF8100A0E3DF /* FilterCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496A5C5B24C2DF8100A0E3DF /* FilterCollectionView.swift */; };
+		496A5C5E24C2DFD600A0E3DF /* FilterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496A5C5D24C2DFD600A0E3DF /* FilterCollectionViewCell.swift */; };
 		49771A2024C2BFC6007B1449 /* ProductResidentCategorieTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49771A1F24C2BFC6007B1449 /* ProductResidentCategorieTableViewCell.swift */; };
 		498B060124BC538C0027BFA7 /* CustomNavigationBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498B060024BC538C0027BFA7 /* CustomNavigationBarView.swift */; };
 		498B060424BC54320027BFA7 /* TextFieldInImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498B060324BC54320027BFA7 /* TextFieldInImageView.swift */; };
@@ -73,6 +75,8 @@
 		4943177D24BB2CE80032D125 /* MainTableCustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableCustomView.swift; sourceTree = "<group>"; };
 		4943177F24BB32420032D125 /* MainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
 		4943178224BC15E10032D125 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		496A5C5B24C2DF8100A0E3DF /* FilterCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterCollectionView.swift; sourceTree = "<group>"; };
+		496A5C5D24C2DFD600A0E3DF /* FilterCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterCollectionViewCell.swift; sourceTree = "<group>"; };
 		49771A1F24C2BFC6007B1449 /* ProductResidentCategorieTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductResidentCategorieTableViewCell.swift; sourceTree = "<group>"; };
 		498B060024BC538C0027BFA7 /* CustomNavigationBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationBarView.swift; sourceTree = "<group>"; };
 		498B060324BC54320027BFA7 /* TextFieldInImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldInImageView.swift; sourceTree = "<group>"; };
@@ -185,6 +189,7 @@
 			children = (
 				4943177B24BAFD0A0032D125 /* MainCollectionViewCell.swift */,
 				4943177F24BB32420032D125 /* MainTableViewCell.swift */,
+				496A5C5D24C2DFD600A0E3DF /* FilterCollectionViewCell.swift */,
 			);
 			path = CustomCell;
 			sourceTree = "<group>";
@@ -195,6 +200,15 @@
 				4943178224BC15E10032D125 /* Data.swift */,
 			);
 			path = Data;
+			sourceTree = "<group>";
+		};
+		496A5C5A24C2DF4400A0E3DF /* ProductTopView */ = {
+			isa = PBXGroup;
+			children = (
+				498B060024BC538C0027BFA7 /* CustomNavigationBarView.swift */,
+				496A5C5B24C2DF8100A0E3DF /* FilterCollectionView.swift */,
+			);
+			path = ProductTopView;
 			sourceTree = "<group>";
 		};
 		49771A2124C2C708007B1449 /* CustomCell */ = {
@@ -219,7 +233,7 @@
 			children = (
 				4943177824BAF5D20032D125 /* MainCollectionCustomView.swift */,
 				4943177D24BB2CE80032D125 /* MainTableCustomView.swift */,
-				498B060024BC538C0027BFA7 /* CustomNavigationBarView.swift */,
+				496A5C5A24C2DF4400A0E3DF /* ProductTopView */,
 				4922DDCF24C1AEF90063C88A /* ProductResident */,
 				49FC692E24C032C2006CA2DF /* ProductDetail */,
 				498B060524BC60820027BFA7 /* SettingRegion */,
@@ -344,7 +358,9 @@
 			files = (
 				4943177E24BB2CE80032D125 /* MainTableCustomView.swift in Sources */,
 				4993223924BC366A00279FCC /* NoticeTopCustomView.swift in Sources */,
+				496A5C5C24C2DF8100A0E3DF /* FilterCollectionView.swift in Sources */,
 				4922DDD324C1D0BE0063C88A /* ProductResidentCategorieView.swift in Sources */,
+				496A5C5E24C2DFD600A0E3DF /* FilterCollectionViewCell.swift in Sources */,
 				4943177024BAE7830032D125 /* ChattingViewController.swift in Sources */,
 				498B060424BC54320027BFA7 /* TextFieldInImageView.swift in Sources */,
 				4922DDCA24C179D90063C88A /* SellerOtherProductView.swift in Sources */,

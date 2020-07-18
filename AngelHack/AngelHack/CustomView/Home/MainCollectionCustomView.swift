@@ -14,10 +14,15 @@ class MainCollectionCustomView: UIView {
   
   let collectionViewLayout = UICollectionViewFlowLayout()
   lazy var collectionView = UICollectionView(frame: .zero, collectionViewLayout: collectionViewLayout)
+  var superViewWidth: CGFloat = 0
+  var superViewHeight: CGFloat = 0
   
   // MARK: - View Init
-  override init(frame: CGRect) {
+  init(frame: CGRect, superViewWidth: CGFloat, superViewHeight: CGFloat) {
     super.init(frame: frame)
+    self.superViewWidth = superViewWidth
+    self.superViewHeight = superViewHeight
+    
     setUI()
     setCollectionView()
     
@@ -30,17 +35,18 @@ class MainCollectionCustomView: UIView {
   // MARK: - SetUp Layout
   
   func setCollectionView() {
-
-    let layoutWidth: CGFloat = DeviceSize.width / 2.15
-    let layoutHeight: CGFloat = DeviceSize.height / 3
-    let lineSpacing: CGFloat = 10
-    let interitemSpacing: CGFloat = 0
-    let itemInsets: CGFloat = 0
+    let itemSpasing: CGFloat = 11
+    let lineSpasing: CGFloat = 16
+    let itemCount:CGFloat = 2
+    let sectionInset = UIEdgeInsets(top: 5, left: 10, bottom: 10, right: 10)
     
-    collectionViewLayout.itemSize = CGSize (width: layoutWidth, height: layoutHeight)
-    collectionViewLayout.minimumLineSpacing = lineSpacing
-    collectionViewLayout.minimumInteritemSpacing = interitemSpacing
-    collectionViewLayout.sectionInset = UIEdgeInsets (top: itemInsets, left: itemInsets, bottom: itemInsets, right: itemInsets)
+    collectionViewLayout.sectionInset = sectionInset
+    collectionViewLayout.minimumLineSpacing = lineSpasing
+    collectionViewLayout.minimumInteritemSpacing = itemSpasing
+    print(collectionView.bounds.width)
+    let contentWidth = superViewWidth - (itemSpasing * (itemCount - 1)) - (sectionInset.left + sectionInset.right)
+    let cellWidth = contentWidth / itemCount
+    collectionViewLayout.itemSize = CGSize(width: cellWidth, height: 370)
     
     collectionView.backgroundColor = .systemBackground
     collectionView.dataSource = self
@@ -70,8 +76,11 @@ extension MainCollectionCustomView: UICollectionViewDataSource {
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Custom", for: indexPath) as! MainCollectionViewCell
     cell.backgroundColor = .systemGray
-    cell.productImageView.image = UIImage(named: "jwlee_logo")
+    cell.layer.cornerRadius = 10
+    cell.clipsToBounds = true
+    cell.productImageView.image = UIImage(named: "감자")
     return cell
   }
 }
+
 
