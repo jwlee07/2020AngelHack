@@ -29,7 +29,6 @@ class MainCollectionCustomView: UIView {
     
     setUI()
     setCollectionView()
-    
   }
   
   required init?(coder: NSCoder) {
@@ -50,7 +49,7 @@ class MainCollectionCustomView: UIView {
     print(collectionView.bounds.width)
     let contentWidth = superViewWidth - (itemSpasing * (itemCount - 1)) - (sectionInset.left + sectionInset.right)
     let cellWidth = contentWidth / itemCount
-    collectionViewLayout.itemSize = CGSize(width: cellWidth, height: 370)
+    collectionViewLayout.itemSize = CGSize(width: cellWidth, height: 330)
     
     collectionView.backgroundColor = .systemBackground
     collectionView.dataSource = self
@@ -80,9 +79,17 @@ extension MainCollectionCustomView: UICollectionViewDataSource {
   
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Custom", for: indexPath) as! MainCollectionViewCell
-    cell.backgroundColor = .systemGray
+    
+//    let shadowSize: CGFloat = 20
+//    let contactRect = CGRect(x: 0, y: 0, width: 0, height: cell.frame.height)
+//    cell.layer.shadowPath = UIBezierPath(ovalIn: contactRect).cgPath
+//    cell.layer.shadowRadius = 5
+//    cell.layer.shadowOpacity = 0.4
+    
+//    cell.layer.cornerRadius = 10
+    cell.layer.borderWidth = 0.05
+    cell.layer.borderColor = UIColor.black.cgColor
     cell.layer.cornerRadius = 10
-    cell.clipsToBounds = true
     cell.productImageView.image = UIImage(named: "못생긴감자_3")
     return cell
   }

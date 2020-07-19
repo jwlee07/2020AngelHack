@@ -9,13 +9,21 @@
 
 import UIKit
 
+protocol CustomNavigationBarViewDelegate: class {
+  func nextViewDangerous()
+}
+
 class CustomNavigationBarView: UIView {
   // MARK: - Properties
-  let subTitleLable = UILabel()
-  let commentLabel = UILabel()
-  let searchTextField = UITextField()
-  let issueBtn = UIButton()
-  let filterCollectionView = FilterCollectionView()
+  weak var delegate: CustomNavigationBarViewDelegate?
+  private let mainLogo = UIImageView()
+  private let subTitleLable = UILabel()
+  private let subTitleText = "감자"
+  private let commentLabel = UILabel()
+  private let commentText = "100"
+  private let searchTextField = UITextField()
+  private let issueBtn = UIButton(type: .system)
+  private let filterCollectionView = FilterCollectionView()
   
   // MARK: - View LifeCycle
   override init(frame: CGRect) {
@@ -31,19 +39,26 @@ class CustomNavigationBarView: UIView {
   
   // MARK: - Layout
   private func setUI() {
-    [subTitleLable, issueBtn, searchTextField, filterCollectionView].forEach {
+    [mainLogo, subTitleLable, commentLabel, issueBtn, searchTextField, filterCollectionView].forEach {
       addSubview($0)
       $0.translatesAutoresizingMaskIntoConstraints = false
     }
     
-    subTitleLable.text = "B끗장터 ISSUE"
-    subTitleLable.font = UIFont.init(name: "AppleSDGothicNeo-SemiBold", size: 26)
+    mainLogo.image = UIImage(named: "mainLogo")
     
-    issueBtn.setTitle("강원도는 지금 감자...", for: .normal)
-    issueBtn.setTitleColor(.black, for: .normal)
-    issueBtn.titleLabel?.font = UIFont.init(name: "AppleSDGothicNeo-SemiBold", size: 24)
+    subTitleLable.text = "버려질 위기의 \(subTitleText)는"
+    subTitleLable.font = UIFont.init(name: "AppleSDGothicNeo-Bold", size: 24)
     
-    searchTextField.placeholder = "B끗 상품들을 만나러 가실래요?"
+    commentLabel.text = "현재 총 \(commentText)kg"
+    commentLabel.font = UIFont.init(name: "AppleSDGothicNeo-Bold", size: 24)
+    
+    issueBtn.alpha = 0.4
+    issueBtn.setTitle("구하러가기 >", for: .normal)
+    issueBtn.setTitleColor(UIColor(red: 0.125, green: 0.737, blue: 0.584, alpha: 1), for: .normal)
+    issueBtn.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 10)
+    issueBtn.addTarget(self, action: #selector(issueBtnDidTap), for: .touchUpInside)
+    
+//    searchTextField.placeholder = "B끗 상품들을 만나러 가실래요?"
     searchTextField.leftView = TextFieldInImageView()
     searchTextField.leftViewMode = .always
     searchTextField.borderStyle = .roundedRect
@@ -52,13 +67,20 @@ class CustomNavigationBarView: UIView {
   
   private func setLayout() {
     NSLayoutConstraint.activate([
-      subTitleLable.topAnchor.constraint(equalTo: topAnchor, constant: 54),
-      subTitleLable.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 8),
+      mainLogo.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 16),
+      mainLogo.centerXAnchor.constraint(equalTo: centerXAnchor),
       
-      issueBtn.topAnchor.constraint(equalTo: subTitleLable.bottomAnchor, constant: 2),
-      issueBtn.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 8),
+      subTitleLable.topAnchor.constraint(equalTo: mainLogo.bottomAnchor, constant: 24),
+      subTitleLable.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
       
-      searchTextField.topAnchor.constraint(equalTo: issueBtn.bottomAnchor, constant: 12),
+      commentLabel.topAnchor.constraint(equalTo: subTitleLable.bottomAnchor, constant: 4),
+      commentLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
+      
+//      issueBtn.topAnchor.constraint(equalTo: subTitleLable.bottomAnchor, constant: 4),
+      issueBtn.centerYAnchor.constraint(equalTo: commentLabel.centerYAnchor),
+      issueBtn.leadingAnchor.constraint(equalTo: commentLabel.trailingAnchor, constant: 10),
+      
+      searchTextField.topAnchor.constraint(equalTo: commentLabel.bottomAnchor, constant: 18),
       searchTextField.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
       searchTextField.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10),
       searchTextField.heightAnchor.constraint(equalToConstant: 38),
@@ -66,11 +88,17 @@ class CustomNavigationBarView: UIView {
       filterCollectionView.topAnchor.constraint(equalTo: searchTextField.bottomAnchor, constant: 10),
       filterCollectionView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
       filterCollectionView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10),
-      filterCollectionView.heightAnchor.constraint(equalToConstant: 30)
+      filterCollectionView.heightAnchor.constraint(equalToConstant: 30),
+      filterCollectionView.bottomAnchor.constraint(equalTo: bottomAnchor)
     ])
   }
   
   // MARK: - Action Handler
+  
+  @objc private func issueBtnDidTap(_ sender: UIButton) {
+    delegate?.nextViewDangerous()
+    print(11)
+  }
 }
 
 // MARK: - Extension

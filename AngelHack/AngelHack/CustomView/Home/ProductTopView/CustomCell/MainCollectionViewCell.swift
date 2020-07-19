@@ -13,47 +13,46 @@ class MainCollectionViewCell: UICollectionViewCell {
   
   let productImageView: UIImageView = {
     let imageView = UIImageView()
-    imageView.backgroundColor = .systemBackground
     return imageView
   }()
   
   let titleLabel: UILabel = {
     let label = UILabel()
     label.text = "Title"
-    label.textColor = .systemGray3
-    label.font = UIFont.init(name: "Apple SD Gothic Neo Bold", size: 18)
+    label.font = UIFont.init(name: "AppleSDGothicNeo-SemiBold", size: 18)
+    label.textColor = UIColor(red: 0.35, green: 0.35, blue: 0.35, alpha: 1)
     return label
   }()
   
   let unitLabel: UILabel = {
     let label = UILabel()
     label.text = "\(5)kg"
-    label.textColor = .systemGray3
-    label.font = UIFont.init(name: "Apple SD Gothic Neo", size: 12)
+    label.font = UIFont.init(name: "AppleSDGothicNeo-SemiBold", size: 12)
+    label.textColor = UIColor(red: 0.619, green: 0.619, blue: 0.619, alpha: 1)
     return label
   }()
   
   let countLabel: UILabel = {
     let label = UILabel()
     label.text = "\(10)개"
-    label.textColor = .systemGray3
-    label.font = UIFont.init(name: "Apple SD Gothic Neo", size: 12)
+    label.font = UIFont.init(name: "AppleSDGothicNeo-SemiBold", size: 12)
+    label.textColor = UIColor(red: 0.619, green: 0.619, blue: 0.619, alpha: 1)
     return label
   }()
   
   let lastDayLabel: UILabel = {
     let label = UILabel()
     label.text = "마감일"
-    label.textColor = .systemGray3
-    label.font = UIFont.init(name: "Apple SD Gothic Neo", size: 11)
+    label.font = UIFont.init(name: "AppleSDGothicNeo-SemiBold", size: 11)
+    label.textColor = UIColor(red: 0.619, green: 0.619, blue: 0.619, alpha: 1)
     return label
   }()
   
   let priceLabel: UILabel = {
     let label = UILabel()
     label.text = "3,000원"
-    label.textColor = .systemGray3
-    label.font = UIFont.init(name: "Apple SD Gothic Neo Bold", size: 18)
+    label.font = UIFont.init(name: "AppleSDGothicNeo-SemiBold", size: 18)
+    label.textColor = UIColor(red: 0.35, green: 0.35, blue: 0.35, alpha: 1)
     return label
   }()
   
@@ -61,15 +60,15 @@ class MainCollectionViewCell: UICollectionViewCell {
     let imageView = UIImageView()
     let largeConfig = UIImage.SymbolConfiguration(pointSize: 12)
     imageView.image = UIImage(systemName: "suit.heart", withConfiguration: largeConfig)
-    imageView.tintColor = .systemGray3
+    imageView.tintColor = UIColor(red: 0.619, green: 0.619, blue: 0.619, alpha: 1)
     return imageView
   }()
   
   let likeCountLabel: UILabel = {
     let label = UILabel()
     label.text = "\(0)개"
-    label.textColor = .systemGray3
-    label.font = UIFont.init(name: "Apple SD Gothic Neo", size: 12)
+    label.font = UIFont.init(name: "AppleSDGothicNeo-SemiBold", size: 12)
+    label.textColor = UIColor(red: 0.619, green: 0.619, blue: 0.619, alpha: 1)
     return label
   }()
   
@@ -89,6 +88,7 @@ class MainCollectionViewCell: UICollectionViewCell {
   // MARK: - SetUp Layout
   
   private func setUI() {
+    backgroundColor = .systemBackground
     [
       productImageView,
       titleLabel,
@@ -109,7 +109,7 @@ class MainCollectionViewCell: UICollectionViewCell {
       productImageView.topAnchor.constraint(equalTo: contentView.topAnchor),
       productImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
       productImageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
-      productImageView.heightAnchor.constraint(equalTo: contentView.heightAnchor, multiplier: 0.73),
+      productImageView.heightAnchor.constraint(equalTo: contentView.heightAnchor, multiplier: 0.65),
       
       titleLabel.topAnchor.constraint(equalTo: productImageView.bottomAnchor, constant: 10),
       titleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10.12),
