@@ -96,7 +96,7 @@ extension MainCollectionCustomView: UICollectionViewDataSource {
 }
 
 extension MainCollectionCustomView: UICollectionViewDelegate {
-  func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {    
+  func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
     delegate?.nextView()
   }
 }

@@ -12,6 +12,12 @@ class LoginViewController: UIViewController {
   
   // MARK: - Property
   
+  lazy var loginImageView: UIImageView = {
+    let imageView = UIImageView()
+    imageView.image = UIImage(named: "B급장터_로고")
+    return imageView
+  }()
+  
   private let idTextfield: UITextField = {
     let textfield = UITextField()
     textfield.placeholder = "아이디를 입력해주세요."
@@ -57,8 +63,7 @@ class LoginViewController: UIViewController {
     let button = UIButton()
     button.setTitle("로그인", for: .normal)
     button.setTitleColor(.white, for: .normal)
-//    button.backgroundColor = UIColor(red: 0, green: 0.698, blue: 0.525, alpha: 1)
-    button.backgroundColor = .systemGray
+    button.backgroundColor = UIColor(red: 0, green: 0.698, blue: 0.525, alpha: 1)
     button.layer.cornerRadius = 10
     button.clipsToBounds = true
     button.addTarget(self, action: #selector(didTapLoginButton), for: .touchUpInside)
@@ -142,16 +147,21 @@ class LoginViewController: UIViewController {
     let padding: CGFloat = 20
     let margin: CGFloat = 10
     let minMargin: CGFloat = 5
+    let loginImageWidth: CGFloat = 40
+    let loginImageHeight: CGFloat = 70
     
-    [idTextfield, idUnderLine, passwordTextfield, passwordUnderLine, loginButton, lookAroundView, idPwSearchView, signInButoon].forEach {
+    [idTextfield, idUnderLine, passwordTextfield, passwordUnderLine, loginButton, lookAroundView, idPwSearchView, signInButoon, loginImageView].forEach {
       view.addSubview($0)
       $0.translatesAutoresizingMaskIntoConstraints = false
       
-      $0.leadingAnchor.constraint(equalTo: guide.leadingAnchor, constant: padding).isActive = true
-      $0.trailingAnchor.constraint(equalTo: guide.trailingAnchor, constant: -padding).isActive = true
+      if $0 != loginImageView {
+        $0.leadingAnchor.constraint(equalTo: guide.leadingAnchor, constant: padding).isActive = true
+        $0.trailingAnchor.constraint(equalTo: guide.trailingAnchor, constant: -padding).isActive = true
+      }
     }
     
     NSLayoutConstraint.activate([
+      
       idTextfield.topAnchor.constraint(equalTo: guide.topAnchor, constant: viewHeight / 4),
       idTextfield.heightAnchor.constraint(equalToConstant: itemHeight),
       
@@ -174,9 +184,15 @@ class LoginViewController: UIViewController {
       lookAroundView.heightAnchor.constraint(equalToConstant: itemHeight),
       
       signInButoon.topAnchor.constraint(equalTo: lookAroundView.safeAreaLayoutGuide.bottomAnchor, constant: margin),
-      signInButoon.heightAnchor.constraint(equalToConstant: itemHeight)
+      signInButoon.heightAnchor.constraint(equalToConstant: itemHeight),
+      
+      loginImageView.bottomAnchor.constraint(equalTo: idTextfield.topAnchor, constant: -itemHeight),
+      loginImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+      loginImageView.widthAnchor.constraint(equalToConstant: loginImageWidth),
+      loginImageView.heightAnchor.constraint(equalToConstant: loginImageHeight)
     ])
     
+    signInButoon.alpha = 0
     lookAroundView.addSubview(lookAroundButton)
     lookAroundButton.translatesAutoresizingMaskIntoConstraints = false
     
@@ -281,6 +297,6 @@ extension LoginViewController: UITextFieldDelegate {
     default:
       break
     }
-
+    
   }
 }

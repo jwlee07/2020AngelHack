@@ -28,7 +28,7 @@ class MainViewController: UIViewController {
     
     setMainViewUI()
   }
-  
+
   // MARK: - Setup Layout
   
   func setMainViewUI() {
@@ -85,7 +85,6 @@ class MainViewController: UIViewController {
 extension MainViewController: MainCollectionCustomViewDelegate {
   func nextView() {
     let productDetailViewController = ProductDetailViewController()
-    
     navigationController?.pushViewController(productDetailViewController, animated: true)
   }
 }

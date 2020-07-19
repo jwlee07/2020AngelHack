@@ -8,19 +8,18 @@
 
 import UIKit
 
-class DetailProductTableViewCell: UITableViewCell {
+class ProductResidentViewCell: UITableViewCell {
   
   // MARK: - Property
   
   var productView = UIView()
-  static let identifier = "DetailProductTableViewCell"
+  static let identifier = "ProductResidentViewCell"
 
   // MARK: - init View
     override func awakeFromNib() {
         super.awakeFromNib()
         
     }
-
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
       setUI()
@@ -42,3 +41,4 @@ class DetailProductTableViewCell: UITableViewCell {
     ])
   }
 }
+

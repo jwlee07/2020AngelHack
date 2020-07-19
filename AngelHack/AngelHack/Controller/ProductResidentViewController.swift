@@ -1,18 +1,22 @@
  //
-//  ProductResidentViewController.swift
-//  AngelHack
-//
-//  Created by 이진욱 on 2020/07/17.
-//  Copyright © 2020 jwlee. All rights reserved.
-//
-
-import UIKit
-
-class ProductResidentViewController: UIViewController {
+ //  ProductResidentViewController.swift
+ //  AngelHack
+ //
+ //  Created by 이진욱 on 2020/07/17.
+ //  Copyright © 2020 jwlee. All rights reserved.
+ //
+ 
+ import UIKit
+ 
+ class ProductResidentViewController: UIViewController {
   // MARK: - Property
   
   let productResidentTopView = ProductResidentTopView()
   let productResidentCategorieView = ProductResidentCategorieView()
+  let productResidentDetailExplanaView = ProductResidentDetailExplanaView()
+  
+  let productResidentTableView = UITableView()
+  lazy var productResidentViewArr = [productResidentTopView, productResidentCategorieView, productResidentDetailExplanaView]
   
   let symbolSize = UIImage.SymbolConfiguration(pointSize: 24)
   
@@ -20,6 +24,7 @@ class ProductResidentViewController: UIViewController {
     let button = UIButton()
     button.setImage(UIImage(systemName: "arrow.left", withConfiguration: symbolSize), for: .normal)
     button.tintColor = .darkGray
+    button.addTarget(self, action: #selector(didTapDismissButton), for: .touchUpInside)
     return button
   }()
   
@@ -34,6 +39,7 @@ class ProductResidentViewController: UIViewController {
     button.setTitle("작성 완료", for: .normal)
     button.setTitleColor(.white, for: .normal)
     button.backgroundColor = UIColor(red: 0, green: 0.698, blue: 0.525, alpha: 1)
+    button.addTarget(self, action: #selector(didTapDismissButton), for: .touchUpInside)
     return button
   }()
   
@@ -42,47 +48,97 @@ class ProductResidentViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    setTableView()
     setUI()
     
   }
   // MARK: - SetUp Layout
   
+  func setTableView() {
+    productResidentTableView.allowsSelection = false
+    productResidentTableView.dataSource = self
+    productResidentTableView.register(ProductResidentViewCell.self, forCellReuseIdentifier: ProductResidentViewCell.identifier)
+  }
+  
   func setUI() {
     
     let guide = view.safeAreaLayoutGuide
-    let margin: CGFloat = 10
+    let buttonMargin: CGFloat = 20
+    let margin: CGFloat = 30
     let topMargin: CGFloat = 100
-    let tableViewMargin: CGFloat = 150
-    let topViewHeight: CGFloat = 200
     let buttonHeight: CGFloat = 72
     
-    [dismissButton, titleLabel, productResidentTopView, productResidentCategorieView, productResidentCompleteButton].forEach {
+    [dismissButton, titleLabel, productResidentTableView, productResidentCompleteButton].forEach {
       view.addSubview($0)
       $0.translatesAutoresizingMaskIntoConstraints = false
     }
     
     NSLayoutConstraint.activate([
       dismissButton.topAnchor.constraint(equalTo: guide.topAnchor, constant: margin),
-      dismissButton.leadingAnchor.constraint(equalTo: guide.leadingAnchor, constant: margin),
+      dismissButton.leadingAnchor.constraint(equalTo: guide.leadingAnchor, constant: buttonMargin),
       
       titleLabel.topAnchor.constraint(equalTo: guide.topAnchor, constant: margin),
       titleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
       
-      productResidentTopView.topAnchor.constraint(equalTo: guide.topAnchor, constant: topMargin),
-      productResidentTopView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-      productResidentTopView.leadingAnchor.constraint(equalTo: guide.leadingAnchor),
-      productResidentTopView.trailingAnchor.constraint(equalTo: guide.trailingAnchor),
-      productResidentTopView.heightAnchor.constraint(equalToConstant: topViewHeight),
-    
-      productResidentCategorieView.topAnchor.constraint(equalTo: productResidentTopView.bottomAnchor),
-      productResidentCategorieView.leadingAnchor.constraint(equalTo: guide.leadingAnchor),
-      productResidentCategorieView.trailingAnchor.constraint(equalTo: guide.trailingAnchor),
-      productResidentCategorieView.bottomAnchor.constraint(equalTo: guide.bottomAnchor, constant: -tableViewMargin),
+      productResidentTableView.topAnchor.constraint(equalTo: guide.topAnchor, constant: topMargin),
+      productResidentTableView.leadingAnchor.constraint(equalTo: guide.leadingAnchor),
+      productResidentTableView.trailingAnchor.constraint(equalTo: guide.trailingAnchor),
+      productResidentTableView.bottomAnchor.constraint(equalTo: productResidentCompleteButton.topAnchor),
       
       productResidentCompleteButton.leadingAnchor.constraint(equalTo: guide.leadingAnchor),
       productResidentCompleteButton.trailingAnchor.constraint(equalTo: guide.trailingAnchor),
       productResidentCompleteButton.bottomAnchor.constraint(equalTo: view.bottomAnchor),
       productResidentCompleteButton.heightAnchor.constraint(equalToConstant: buttonHeight)
     ])
+    
+//    [productResidentTopView, productResidentCategorieView, productResidentDetailExplanaView].forEach {
+//      productResidentTableView.addSubview($0)
+//      $0.translatesAutoresizingMaskIntoConstraints = false
+//
+//      $0.leadingAnchor.constraint(equalTo: productResidentScrollView.leadingAnchor).isActive = true
+//      $0.trailingAnchor.constraint(equalTo: productResidentScrollView.trailingAnchor).isActive = true
+//    }
+    
+//    NSLayoutConstraint.activate([
+//      productResidentTopView.topAnchor.constraint(equalTo: productResidentScrollView.topAnchor),
+//      productResidentTopView.centerXAnchor.constraint(equalTo: productResidentScrollView.centerXAnchor),
+//      productResidentTopView.heightAnchor.constraint(equalTo: productResidentScrollView.heightAnchor, multiplier: 0.3),
+//
+//      productResidentCategorieView.topAnchor.constraint(equalTo: productResidentTopView.bottomAnchor, constant: margin),
+//      productResidentCategorieView.heightAnchor.constraint(equalTo: productResidentScrollView.heightAnchor, multiplier: 0.45),
+//
+//      productResidentDetailExplanaView.topAnchor.constraint(equalTo: productResidentCategorieView.bottomAnchor),
+//      productResidentDetailExplanaView.heightAnchor.constraint(equalTo: productResidentScrollView.heightAnchor, multiplier: 0.5)
+//    ])
   }
-}
+  
+  // MARK: - Action Button
+  @objc func didTapDismissButton(_ sender: UIButton) {
+    navigationController?.popViewController(animated: true)
+  }
+ }
+ 
+ // MARK: -
+ 
+ extension ProductResidentViewController: UITableViewDataSource {
+  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    productResidentViewArr.count
+  }
+  
+  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    let residentCell = productResidentTableView.dequeueReusableCell(withIdentifier: ProductResidentViewCell.identifier, for: indexPath) as! ProductResidentViewCell
+    residentCell.productView = productResidentViewArr[indexPath.row]
+    switch indexPath.row {
+    case 0:
+      productResidentTableView.rowHeight = 200
+    case 1:
+      productResidentTableView.rowHeight = 250
+    case 2:
+      productResidentTableView.rowHeight = 500
+    default:
+      break
+    }
+    return residentCell
+  }
+ }
+
