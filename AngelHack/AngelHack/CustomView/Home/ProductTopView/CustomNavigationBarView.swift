@@ -52,7 +52,6 @@ class CustomNavigationBarView: UIView {
     commentLabel.text = "현재 총 \(commentText)kg"
     commentLabel.font = UIFont.init(name: "AppleSDGothicNeo-Bold", size: 24)
     
-    issueBtn.alpha = 0.4
     issueBtn.setTitle("구하러가기 >", for: .normal)
     issueBtn.setTitleColor(UIColor(red: 0.125, green: 0.737, blue: 0.584, alpha: 1), for: .normal)
     issueBtn.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 10)
