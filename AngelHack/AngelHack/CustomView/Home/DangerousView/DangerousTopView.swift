@@ -51,7 +51,7 @@ class DangerousTopView: UIView {
     commentLabel.text = "위기의 감자...👀"
     commentLabel.font = UIFont(name: "AppleSDGothicNeo-SemiBold", size: 22)
     
-    topMainImageView.image = UIImage(named: "갬쥐")
+    topMainImageView.image = UIImage(named: "감자4")
     topMainImageView.contentMode = .scaleToFill
     topMainImageView.layer.cornerRadius = 10
     topMainImageView.clipsToBounds = true
