@@ -62,8 +62,8 @@ class MainViewController: UIViewController {
     ])
     
     NSLayoutConstraint.activate([
-      addBtn.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15),
-      addBtn.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -15),
+      addBtn.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
+      addBtn.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20),
       addBtn.widthAnchor.constraint(equalToConstant: 56),
       addBtn.heightAnchor.constraint(equalToConstant: 56)
     ])
@@ -73,18 +73,22 @@ class MainViewController: UIViewController {
   
   @objc private func didTapMapSearchButton(_ sender: UIButton) {
     let settingVC = SettingRegionViewController()
+    
     present(settingVC, animated: true)
   }
   
   @objc private func addBtnDidTap(_ sender: UIButton) {
-    print(111)
+    let productResidentViewController = ProductResidentViewController()
+//    productResidentViewController.modalPresentationStyle = .overFullScreen
+//    present(productResidentViewController, animated: false)
+    navigationController?.pushViewController(productResidentViewController, animated: true)
   }
-  
 }
 
 extension MainViewController: MainCollectionCustomViewDelegate {
   func nextView() {
     let productDetailViewController = ProductDetailViewController()
+    
     navigationController?.pushViewController(productDetailViewController, animated: true)
   }
 }

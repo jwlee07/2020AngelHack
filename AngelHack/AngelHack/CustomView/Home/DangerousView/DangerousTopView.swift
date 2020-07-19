@@ -18,7 +18,8 @@ class DangerousTopView: UIView {
   private let dismissBtn = UIButton()
   private let commentLabel = UILabel()
   private let topMainImageView = UIImageView()
-  private let imageViewCommentTextView = UITextView()
+  private let imageViewCommentLabel = UILabel()
+  
   
   // MARK: - View LifeCycle
   override init(frame: CGRect) {
@@ -36,10 +37,13 @@ class DangerousTopView: UIView {
   private func setUI() {
     backgroundColor = .systemBackground
     
-    [dismissBtn, commentLabel, topMainImageView].forEach {
+    [dismissBtn, commentLabel, topMainImageView, imageViewCommentLabel].forEach {
       addSubview($0)
       $0.translatesAutoresizingMaskIntoConstraints = false
     }
+    
+//    topMainImageView.addSubview(imageViewCommentLabel)
+//    imageViewCommentLabel.translatesAutoresizingMaskIntoConstraints = false
 
     dismissBtn.addTarget(self, action: #selector(dismissBtnDidTap), for: .touchUpInside)
     dismissBtn.setImage(UIImage(named: "dismissBtn"), for: .normal)
@@ -51,6 +55,18 @@ class DangerousTopView: UIView {
     topMainImageView.contentMode = .scaleToFill
     topMainImageView.layer.cornerRadius = 10
     topMainImageView.clipsToBounds = true
+    
+    imageViewCommentLabel.text = """
+    우리의 감자들이\n
+    태풍으로 인한 상처로\n
+    버려질 위기에 처했어요
+    """
+    
+    imageViewCommentLabel.textAlignment = .center
+    imageViewCommentLabel.numberOfLines = 0
+    imageViewCommentLabel.textColor = UIColor(red: 0.929, green: 0.929, blue: 0.929, alpha: 1)
+    imageViewCommentLabel.font = UIFont.init(name: "AppleSDGothicNeo-Bold", size: 15)
+    imageViewCommentLabel.lineBreakMode = .byWordWrapping
   }
   
   private func setLayout() {
@@ -64,7 +80,10 @@ class DangerousTopView: UIView {
       topMainImageView.topAnchor.constraint(equalTo: commentLabel.bottomAnchor, constant: 16),
       topMainImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
       topMainImageView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10),
-      topMainImageView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -8)
+      topMainImageView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -8),
+      
+      imageViewCommentLabel.centerYAnchor.constraint(equalTo: topMainImageView.centerYAnchor),
+      imageViewCommentLabel.centerXAnchor.constraint(equalTo: topMainImageView.centerXAnchor)
     ])
   }
   

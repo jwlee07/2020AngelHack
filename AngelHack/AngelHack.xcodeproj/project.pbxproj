@@ -50,6 +50,11 @@
 		CEFB4C9724C3226000457EC5 /* DangerousContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFB4C9624C3226000457EC5 /* DangerousContentView.swift */; };
 		CEFB4C9924C3813D00457EC5 /* CategorySelecterListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFB4C9824C3813D00457EC5 /* CategorySelecterListViewController.swift */; };
 		CEFB4C9B24C383A900457EC5 /* CategorySelecterListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFB4C9A24C383A900457EC5 /* CategorySelecterListCell.swift */; };
+		CEFE33C724C4109D00D56DAC /* TalkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFE33C624C4109D00D56DAC /* TalkViewController.swift */; };
+		CEFE33C924C4136200D56DAC /* CompleteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFE33C824C4136200D56DAC /* CompleteViewController.swift */; };
+		CEFE33CE24C43A3B00D56DAC /* TalkTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFE33CD24C43A3B00D56DAC /* TalkTopView.swift */; };
+		CEFE33D024C43F9B00D56DAC /* TalkBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFE33CF24C43F9B00D56DAC /* TalkBottomView.swift */; };
+		CEFE33D424C4527700D56DAC /* TalkContentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFE33D324C4527700D56DAC /* TalkContentsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -98,6 +103,11 @@
 		CEFB4C9624C3226000457EC5 /* DangerousContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DangerousContentView.swift; sourceTree = "<group>"; };
 		CEFB4C9824C3813D00457EC5 /* CategorySelecterListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorySelecterListViewController.swift; sourceTree = "<group>"; };
 		CEFB4C9A24C383A900457EC5 /* CategorySelecterListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorySelecterListCell.swift; sourceTree = "<group>"; };
+		CEFE33C624C4109D00D56DAC /* TalkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TalkViewController.swift; sourceTree = "<group>"; };
+		CEFE33C824C4136200D56DAC /* CompleteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteViewController.swift; sourceTree = "<group>"; };
+		CEFE33CD24C43A3B00D56DAC /* TalkTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TalkTopView.swift; sourceTree = "<group>"; };
+		CEFE33CF24C43F9B00D56DAC /* TalkBottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TalkBottomView.swift; sourceTree = "<group>"; };
+		CEFE33D324C4527700D56DAC /* TalkContentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TalkContentsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,6 +198,8 @@
 				CEFB4C9124C31C5600457EC5 /* DangerousViewController.swift */,
 				CEFB4C9824C3813D00457EC5 /* CategorySelecterListViewController.swift */,
 				494F909D24C3271C00EFBC4F /* LaunchScreenViewController.swift */,
+				CEFE33C624C4109D00D56DAC /* TalkViewController.swift */,
+				CEFE33C824C4136200D56DAC /* CompleteViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -202,6 +214,7 @@
 		4943177724BAF52D0032D125 /* CustomView */ = {
 			isa = PBXGroup;
 			children = (
+				CEFE33CC24C43A1000D56DAC /* Talk */,
 				498B05FE24BC53490027BFA7 /* Home */,
 				498B05FF24BC53690027BFA7 /* Notice */,
 				49C1B55B24BD68B2003ACBDC /* MyPage */,
@@ -330,6 +343,16 @@
 			path = CategorySelecterListCell;
 			sourceTree = "<group>";
 		};
+		CEFE33CC24C43A1000D56DAC /* Talk */ = {
+			isa = PBXGroup;
+			children = (
+				CEFE33CD24C43A3B00D56DAC /* TalkTopView.swift */,
+				CEFE33CF24C43F9B00D56DAC /* TalkBottomView.swift */,
+				CEFE33D324C4527700D56DAC /* TalkContentsView.swift */,
+			);
+			path = Talk;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -403,16 +426,21 @@
 			files = (
 				4993223924BC366A00279FCC /* NoticeTopCustomView.swift in Sources */,
 				496A5C5C24C2DF8100A0E3DF /* FilterCollectionView.swift in Sources */,
+				CEFE33D424C4527700D56DAC /* TalkContentsView.swift in Sources */,
 				4922DDD324C1D0BE0063C88A /* ProductResidentCategorieView.swift in Sources */,
 				496A5C5E24C2DFD600A0E3DF /* FilterCollectionViewCell.swift in Sources */,
 				4943177024BAE7830032D125 /* ChattingViewController.swift in Sources */,
 				498B060424BC54320027BFA7 /* TextFieldInImageView.swift in Sources */,
 				CEFB4C9B24C383A900457EC5 /* CategorySelecterListCell.swift in Sources */,
+				CEFE33CE24C43A3B00D56DAC /* TalkTopView.swift in Sources */,
 				4922DDCA24C179D90063C88A /* SellerOtherProductView.swift in Sources */,
+				CEFE33C724C4109D00D56DAC /* TalkViewController.swift in Sources */,
 				4910FFE924C2EE6C00A15506 /* MainCollectionViewCell.swift in Sources */,
 				492E481724C06635007D7A39 /* DetailProductTableViewCell.swift in Sources */,
+				CEFE33C924C4136200D56DAC /* CompleteViewController.swift in Sources */,
 				4922DDCC24C17D410063C88A /* SellerOtherProducCollectionViewCell.swift in Sources */,
 				4943176A24BACF270032D125 /* LoginViewController.swift in Sources */,
+				CEFE33D024C43F9B00D56DAC /* TalkBottomView.swift in Sources */,
 				4943174E24BACB610032D125 /* AppDelegate.swift in Sources */,
 				CEFB4C9724C3226000457EC5 /* DangerousContentView.swift in Sources */,
 				CEFB4C9024C2EDF100457EC5 /* MainCollectionViewCell.swift in Sources */,
@@ -438,7 +466,6 @@
 				498B060724BC60A30027BFA7 /* SettingRegionBodyView.swift in Sources */,
 				49239C2924BDDD9F00533DEA /* ProductDetailViewController.swift in Sources */,
 				CEFB4C9524C31EE400457EC5 /* DangerousTopView.swift in Sources */,
-				4943177924BAF5D20032D125 /* MainCollectionCustomView.swift in Sources */,
 				494F909E24C3271C00EFBC4F /* LaunchScreenViewController.swift in Sources */,
 				492E481324C05C87007D7A39 /* ProductInfoView.swift in Sources */,
 				CEFB4C9224C31C5600457EC5 /* DangerousViewController.swift in Sources */,

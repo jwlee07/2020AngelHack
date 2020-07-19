@@ -61,6 +61,7 @@
   }
   
   func setUI() {
+    view.backgroundColor = .systemBackground
     
     let guide = view.safeAreaLayoutGuide
     let buttonMargin: CGFloat = 20
