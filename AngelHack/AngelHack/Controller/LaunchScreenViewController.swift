@@ -24,7 +24,7 @@ class LaunchScreenViewController: UIViewController {
     super.viewDidLoad()
     setUI()
     
-    DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+    DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
       let loginVC = LoginViewController()
       loginVC.modalPresentationStyle = .fullScreen
       self.present(loginVC, animated: true)

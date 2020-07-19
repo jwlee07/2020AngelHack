@@ -25,7 +25,7 @@ class MainCollectionCustomView: UIView {
     UIImage.init(named: $0)
   }
   
-  let agriculturalListTitleArr = ["A급 맛 자랑하는 감자", "너무 맛있는 고추에용", "싱싱한 참외 팝니다잉", "탱글탱글 토마토 입니다.", "여름엔 피망이죠 ㅎㅎ", "대한민국 1등이 되고싶으 감자"]
+  let agriculturalListTitleArr = ["A급 맛 자랑하는 감자", "너무 맛있는 고추에용", "싱싱한 참외 팝니다잉", "탱글탱글 토마토 입니다.", "여름엔 피망이죠 ㅎㅎ", "대한민국 1등 감자"]
   
   let agriculturalListUnitArr = ["5kg 10개", "3kg 50개", "10kg 5개", "7kg 8개", "10kg 20개", "10kg 50개"]
   let agriculturalListDeadLineArr = ["2020.07.15", "2020.07.18", "2020.07.24", "2020.07.30", "2020.08.02", "2020.08.15"]
