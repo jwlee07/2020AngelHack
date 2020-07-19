@@ -22,19 +22,18 @@
 그러나 이 농작물들은 실제로 유통되는 상품들과 품질의 차이가 거의 없습니다. 
 b급장터는 이렇게 버려지는 농작물들을 판매하여 소비자는 저렴한 가격에 상품을 구매와 동시에 낭비되는 농작물을 줄이는 가치있는 소비를 할 수 있고 판매자에게는 버려지는 상품들을 판매하여 손해를 줄일 수 있는 서비스입니다.
 
-<img src="https://github.com/jwlee07/2020AngelHack/blob/develop/AngelHack/image/B%EA%B8%89%EC%9E%A5%ED%84%B0_1.png" width="435px" height"866px">
-
+![B급장터_1](https://github.com/jwlee07/2020AngelHack/blob/develop/AngelHack/image/B%EA%B8%89%EC%9E%A5%ED%84%B0_1.png)
 
 #### 로그인 페이지
 
-<img src="https://github.com/jwlee07/2020AngelHack/blob/develop/AngelHack/image/B%EA%B8%89%EC%9E%A5%ED%84%B0_2.png" width="435px" height"866px">
+![B급장터_2](https://github.com/jwlee07/2020AngelHack/blob/develop/AngelHack/image/B%EA%B8%89%EC%9E%A5%ED%84%B0_2.png)
 
 로그인 페이지입니다.
 
 
 #### 홈
 
-<img src="https://github.com/jwlee07/2020AngelHack/blob/develop/AngelHack/image/B%EA%B8%89%EC%9E%A5%ED%84%B0_3.png" width="435px" height"866px">
+![B급장터_3](https://github.com/jwlee07/2020AngelHack/blob/develop/AngelHack/image/B%EA%B8%89%EC%9E%A5%ED%84%B0_3.png)
 
 메인 페이지에서는 현재  b급장터에 올라온 농작물의 종류와 양을 가장 먼저 찾아볼 수 있습니다. 화면을 밑으로 당기면 농작물의 종류와 양이 변경되어 모든 종류의 버려질 위기에 처한 작물들을 확인할 수 있습니다.
 
@@ -43,7 +42,8 @@ b급장터는 이렇게 버려지는 농작물들을 판매하여 소비자는 �
 
 #### 위기의 농작물
 
-<img src="https://github.com/jwlee07/2020AngelHack/blob/develop/AngelHack/image/B%EA%B8%89%EC%9E%A5%ED%84%B0_4.png" width="435px" height"866px">
+![B급장터_4](https://github.com/jwlee07/2020AngelHack/blob/develop/AngelHack/image/B%EA%B8%89%EC%9E%A5%ED%84%B0_4.png)
+
 
 메인의 구하러가기를 터치하면 해당 위기 농작물이 왜 위기에 처했는지를 판매자가 
 판매할 상품을 업로드하면서 등록한 정보를 수집한 데이터를 기준으로 선정하여 
@@ -54,7 +54,8 @@ b급장터는 이렇게 버려지는 농작물들을 판매하여 소비자는 �
 
 #### 상품상세
 
-<img src="https://github.com/jwlee07/2020AngelHack/blob/develop/AngelHack/image/B%EA%B8%89%EC%9E%A5%ED%84%B0_5.png" width="435px" height"866px">
+![B급장터_5](https://github.com/jwlee07/2020AngelHack/blob/develop/AngelHack/image/B%EA%B8%89%EC%9E%A5%ED%84%B0_5.png)
+
 
 상품의 이미지, 무게, 가격, 판매 마감일,
 판매자 프로필, 상품 상세설명 등 상품에 대한 정보를 볼 수 있으며 찜하거나 
@@ -63,7 +64,8 @@ b급장터는 이렇게 버려지는 농작물들을 판매하여 소비자는 �
 
 #### 채팅하기
 
-<img src="https://github.com/jwlee07/2020AngelHack/blob/develop/AngelHack/image/B%EA%B8%89%EC%9E%A5%ED%84%B0_6.png" width="435px" height"866px">
+![B급장터_6](https://github.com/jwlee07/2020AngelHack/blob/develop/AngelHack/image/B%EA%B8%89%EC%9E%A5%ED%84%B0_6.png)
+
 
 판매자와 소비자의 거래 공간이며 가격 흥정 및 거래장소를 선정하고 거래가 성사되면
 구매 확정하기까지 할 수 있습니다.
@@ -71,7 +73,8 @@ b급장터는 이렇게 버려지는 농작물들을 판매하여 소비자는 �
 
 #### 구매 확정 팝업
 
-<img src="https://github.com/jwlee07/2020AngelHack/blob/develop/AngelHack/image/B%EA%B8%89%EC%9E%A5%ED%84%B0_7.png" width="435px" height"866px">
+![B급장터_7](https://github.com/jwlee07/2020AngelHack/blob/develop/AngelHack/image/B%EA%B8%89%EC%9E%A5%ED%84%B0_7.png)
+
 
 판매 마감일에 앱 내에서 구매확정 요청멘트를  주고 구매확정하기 버튼을 누르면 
 자신이 구매한(구한) 농작물의 양을 볼 수 있으며 더 구매하기 버튼을 통해
@@ -80,7 +83,8 @@ b급장터는 이렇게 버려지는 농작물들을 판매하여 소비자는 �
 
 #### 마이페이지
 
-<img src="https://github.com/jwlee07/2020AngelHack/blob/develop/AngelHack/image/B%EA%B8%89%EC%9E%A5%ED%84%B0_8.png" width="435px" height"866px">
+![B급장터_8](https://github.com/jwlee07/2020AngelHack/blob/develop/AngelHack/image/B%EA%B8%89%EC%9E%A5%ED%84%B0_8.png)
+
 
 농작물을 판매하기 위한 판매자 인증을 할 수 있으며 판매내역, 구매내역 조회와 지역 
 설정 등의 기능을 제공합니다.
