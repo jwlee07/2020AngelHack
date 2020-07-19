@@ -15,6 +15,7 @@
   let productResidentCategorieView = ProductResidentCategorieView()
   let productResidentDetailExplanaView = ProductResidentDetailExplanaView()
   
+  
   let productResidentTableView = UITableView()
   lazy var productResidentViewArr = [productResidentTopView, productResidentCategorieView, productResidentDetailExplanaView]
   
@@ -50,11 +51,20 @@
     super.viewDidLoad()
     setTableView()
     setUI()
-    
+  }
+  override func viewWillDisappear(_ animated: Bool) {
+    super.viewWillDisappear(animated)
+    tabBarController?.tabBar.isHidden = false
+  }
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+    productResidentTableView.reloadData()
+    tabBarController?.tabBar.isHidden = true
   }
   // MARK: - SetUp Layout
   
   func setTableView() {
+    productResidentCategorieView.delegate = self
     productResidentTableView.allowsSelection = false
     productResidentTableView.dataSource = self
     productResidentTableView.register(ProductResidentViewCell.self, forCellReuseIdentifier: ProductResidentViewCell.identifier)
@@ -91,35 +101,18 @@
       productResidentCompleteButton.bottomAnchor.constraint(equalTo: view.bottomAnchor),
       productResidentCompleteButton.heightAnchor.constraint(equalToConstant: buttonHeight)
     ])
-    
-//    [productResidentTopView, productResidentCategorieView, productResidentDetailExplanaView].forEach {
-//      productResidentTableView.addSubview($0)
-//      $0.translatesAutoresizingMaskIntoConstraints = false
-//
-//      $0.leadingAnchor.constraint(equalTo: productResidentScrollView.leadingAnchor).isActive = true
-//      $0.trailingAnchor.constraint(equalTo: productResidentScrollView.trailingAnchor).isActive = true
-//    }
-    
-//    NSLayoutConstraint.activate([
-//      productResidentTopView.topAnchor.constraint(equalTo: productResidentScrollView.topAnchor),
-//      productResidentTopView.centerXAnchor.constraint(equalTo: productResidentScrollView.centerXAnchor),
-//      productResidentTopView.heightAnchor.constraint(equalTo: productResidentScrollView.heightAnchor, multiplier: 0.3),
-//
-//      productResidentCategorieView.topAnchor.constraint(equalTo: productResidentTopView.bottomAnchor, constant: margin),
-//      productResidentCategorieView.heightAnchor.constraint(equalTo: productResidentScrollView.heightAnchor, multiplier: 0.45),
-//
-//      productResidentDetailExplanaView.topAnchor.constraint(equalTo: productResidentCategorieView.bottomAnchor),
-//      productResidentDetailExplanaView.heightAnchor.constraint(equalTo: productResidentScrollView.heightAnchor, multiplier: 0.5)
-//    ])
   }
   
   // MARK: - Action Button
   @objc func didTapDismissButton(_ sender: UIButton) {
     navigationController?.popViewController(animated: true)
   }
+  override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
+    self.view.endEditing(true)
+  }
  }
  
- // MARK: -
+ // MARK: - UITableViewDataSource
  
  extension ProductResidentViewController: UITableViewDataSource {
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -135,11 +128,21 @@
     case 1:
       productResidentTableView.rowHeight = 250
     case 2:
-      productResidentTableView.rowHeight = 500
+      productResidentTableView.rowHeight = 300
     default:
       break
     }
     return residentCell
   }
  }
-
+ 
+ // MARK: - ProductResidentCategorieDelegate
+ 
+ extension ProductResidentViewController: ProductResidentCategorieDelegate {
+  func presetCategoryAgriculturaView() {
+    let categorySelecterListVC = CategorySelecterListViewController()
+    categorySelecterListVC.modalPresentationStyle = .overFullScreen
+    present(categorySelecterListVC, animated: true)
+  }
+ }
+ 

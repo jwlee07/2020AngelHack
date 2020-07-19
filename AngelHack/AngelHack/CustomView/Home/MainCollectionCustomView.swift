@@ -80,13 +80,6 @@ extension MainCollectionCustomView: UICollectionViewDataSource {
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Custom", for: indexPath) as! MainCollectionViewCell
     
-//    let shadowSize: CGFloat = 20
-//    let contactRect = CGRect(x: 0, y: 0, width: 0, height: cell.frame.height)
-//    cell.layer.shadowPath = UIBezierPath(ovalIn: contactRect).cgPath
-//    cell.layer.shadowRadius = 5
-//    cell.layer.shadowOpacity = 0.4
-    
-//    cell.layer.cornerRadius = 10
     cell.layer.borderWidth = 0.05
     cell.layer.borderColor = UIColor.black.cgColor
     cell.layer.cornerRadius = 10
