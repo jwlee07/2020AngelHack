@@ -1,6 +1,7 @@
 {
   "images" : [
     {
+      "filename" : "알림_1.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
@@ -9,7 +10,6 @@
       "scale" : "2x"
     },
     {
-      "filename" : "오이:고추:열매채소.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

@@ -52,8 +52,7 @@ class TalkContentsView: UIView {
       topImageView.trailingAnchor.constraint(equalTo: trailingAnchor),
       
       bottomImageBtn.topAnchor.constraint(equalTo: topImageView.bottomAnchor),
-      bottomImageBtn.centerXAnchor.constraint(equalTo: centerXAnchor),
-      
+      bottomImageBtn.centerXAnchor.constraint(equalTo: centerXAnchor)
     ])
   }
   

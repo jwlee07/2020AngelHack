@@ -52,17 +52,14 @@ class TalkTopView: UIView {
       dismissBtn.topAnchor.constraint(equalTo: topAnchor, constant: 16),
       dismissBtn.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
       dismissBtn.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 16),
-      dismissBtn.heightAnchor.constraint(equalToConstant: 24),
       
       titleLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
       titleLabel.topAnchor.constraint(equalTo: topAnchor, constant: 16),
       titleLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 16),
-      titleLabel.heightAnchor.constraint(equalToConstant: 24),
       
       moreBtn.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10),
       moreBtn.topAnchor.constraint(equalTo: topAnchor, constant: 16),
       moreBtn.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 16),
-      moreBtn.heightAnchor.constraint(equalToConstant: 24)
     ])
   }
   

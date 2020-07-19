@@ -67,6 +67,7 @@ class ProductDetailViewController: UIViewController {
     button.clipsToBounds = true
     button.layer.borderWidth = 1
     button.layer.borderColor = UIColor.white.cgColor
+    button.addTarget(self, action: #selector(didTapchattingInquiryButton), for: .touchUpInside)
     return button
   }()
   
@@ -172,6 +173,10 @@ class ProductDetailViewController: UIViewController {
   @objc func didTapDismissButton(_ sender: UIButton) {
     navigationController?.popViewController(animated: true)
   }
+  @objc func didTapchattingInquiryButton(_ sender: UIButton) {
+    let talkVC = TalkViewController()
+    navigationController?.pushViewController(talkVC, animated: true)
+  }
 }
 
 // MARK: - UITableViewDataSource
@@ -201,3 +206,4 @@ extension ProductDetailViewController: UITableViewDataSource {
     return detailCell
   }
 }
+
