@@ -45,6 +45,11 @@
 		498B060B24BC61010027BFA7 /* SettingRegionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498B060A24BC61010027BFA7 /* SettingRegionViewController.swift */; };
 		4993223924BC366A00279FCC /* NoticeTopCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4993223824BC366A00279FCC /* NoticeTopCustomView.swift */; };
 		CEFB4C9024C2EDF100457EC5 /* MainCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFB4C8F24C2EDF100457EC5 /* MainCollectionViewCell.swift */; };
+		CEFB4C9224C31C5600457EC5 /* DangerousViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFB4C9124C31C5600457EC5 /* DangerousViewController.swift */; };
+		CEFB4C9524C31EE400457EC5 /* DangerousTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFB4C9424C31EE400457EC5 /* DangerousTopView.swift */; };
+		CEFB4C9724C3226000457EC5 /* DangerousContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFB4C9624C3226000457EC5 /* DangerousContentView.swift */; };
+		CEFB4C9924C3813D00457EC5 /* CategorySelecterListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFB4C9824C3813D00457EC5 /* CategorySelecterListViewController.swift */; };
+		CEFB4C9B24C383A900457EC5 /* CategorySelecterListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFB4C9A24C383A900457EC5 /* CategorySelecterListCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -88,6 +93,11 @@
 		498B060A24BC61010027BFA7 /* SettingRegionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingRegionViewController.swift; sourceTree = "<group>"; };
 		4993223824BC366A00279FCC /* NoticeTopCustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeTopCustomView.swift; sourceTree = "<group>"; };
 		CEFB4C8F24C2EDF100457EC5 /* MainCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCollectionViewCell.swift; sourceTree = "<group>"; };
+		CEFB4C9124C31C5600457EC5 /* DangerousViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DangerousViewController.swift; sourceTree = "<group>"; };
+		CEFB4C9424C31EE400457EC5 /* DangerousTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DangerousTopView.swift; sourceTree = "<group>"; };
+		CEFB4C9624C3226000457EC5 /* DangerousContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DangerousContentView.swift; sourceTree = "<group>"; };
+		CEFB4C9824C3813D00457EC5 /* CategorySelecterListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorySelecterListViewController.swift; sourceTree = "<group>"; };
+		CEFB4C9A24C383A900457EC5 /* CategorySelecterListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorySelecterListCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,6 +185,8 @@
 				498B060A24BC61010027BFA7 /* SettingRegionViewController.swift */,
 				49239C2824BDDD9F00533DEA /* ProductDetailViewController.swift */,
 				4922DDCD24C1AD370063C88A /* ProductResidentViewController.swift */,
+				CEFB4C9124C31C5600457EC5 /* DangerousViewController.swift */,
+				CEFB4C9824C3813D00457EC5 /* CategorySelecterListViewController.swift */,
 				494F909D24C3271C00EFBC4F /* LaunchScreenViewController.swift */,
 			);
 			path = Controller;
@@ -238,6 +250,8 @@
 		498B05FE24BC53490027BFA7 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				CEFB4C9C24C383B300457EC5 /* CategorySelecterListCell */,
+				CEFB4C9324C31E1500457EC5 /* DangerousView */,
 				4921918824C30DA3000D19FA /* MainCollectionCustomView.swift */,
 				496A5C5A24C2DF4400A0E3DF /* ProductTopView */,
 				4922DDCF24C1AEF90063C88A /* ProductResident */,
@@ -297,6 +311,23 @@
 				CEFB4C8F24C2EDF100457EC5 /* MainCollectionViewCell.swift */,
 			);
 			path = CustomCell;
+			sourceTree = "<group>";
+		};
+		CEFB4C9324C31E1500457EC5 /* DangerousView */ = {
+			isa = PBXGroup;
+			children = (
+				CEFB4C9424C31EE400457EC5 /* DangerousTopView.swift */,
+				CEFB4C9624C3226000457EC5 /* DangerousContentView.swift */,
+			);
+			path = DangerousView;
+			sourceTree = "<group>";
+		};
+		CEFB4C9C24C383B300457EC5 /* CategorySelecterListCell */ = {
+			isa = PBXGroup;
+			children = (
+				CEFB4C9A24C383A900457EC5 /* CategorySelecterListCell.swift */,
+			);
+			path = CategorySelecterListCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -376,12 +407,14 @@
 				496A5C5E24C2DFD600A0E3DF /* FilterCollectionViewCell.swift in Sources */,
 				4943177024BAE7830032D125 /* ChattingViewController.swift in Sources */,
 				498B060424BC54320027BFA7 /* TextFieldInImageView.swift in Sources */,
+				CEFB4C9B24C383A900457EC5 /* CategorySelecterListCell.swift in Sources */,
 				4922DDCA24C179D90063C88A /* SellerOtherProductView.swift in Sources */,
 				4910FFE924C2EE6C00A15506 /* MainCollectionViewCell.swift in Sources */,
 				492E481724C06635007D7A39 /* DetailProductTableViewCell.swift in Sources */,
 				4922DDCC24C17D410063C88A /* SellerOtherProducCollectionViewCell.swift in Sources */,
 				4943176A24BACF270032D125 /* LoginViewController.swift in Sources */,
 				4943174E24BACB610032D125 /* AppDelegate.swift in Sources */,
+				CEFB4C9724C3226000457EC5 /* DangerousContentView.swift in Sources */,
 				CEFB4C9024C2EDF100457EC5 /* MainCollectionViewCell.swift in Sources */,
 				494F90A224C33BDA00EFBC4F /* ProductResidentViewCell.swift in Sources */,
 				4943176C24BAE52C0032D125 /* ViewController.swift in Sources */,
@@ -399,12 +432,16 @@
 				4943177624BAE8830032D125 /* NoticeViewController.swift in Sources */,
 				4943178324BC15E10032D125 /* Data.swift in Sources */,
 				498B060B24BC61010027BFA7 /* SettingRegionViewController.swift in Sources */,
+				CEFB4C9924C3813D00457EC5 /* CategorySelecterListViewController.swift in Sources */,
 				4943177424BAE7C00032D125 /* MyPageViewController.swift in Sources */,
 				49239C2D24BEF25500533DEA /* DetailTestView.swift in Sources */,
 				498B060724BC60A30027BFA7 /* SettingRegionBodyView.swift in Sources */,
 				49239C2924BDDD9F00533DEA /* ProductDetailViewController.swift in Sources */,
+				CEFB4C9524C31EE400457EC5 /* DangerousTopView.swift in Sources */,
+				4943177924BAF5D20032D125 /* MainCollectionCustomView.swift in Sources */,
 				494F909E24C3271C00EFBC4F /* LaunchScreenViewController.swift in Sources */,
 				492E481324C05C87007D7A39 /* ProductInfoView.swift in Sources */,
+				CEFB4C9224C31C5600457EC5 /* DangerousViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
