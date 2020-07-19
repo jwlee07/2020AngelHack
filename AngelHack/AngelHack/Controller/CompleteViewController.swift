@@ -33,10 +33,16 @@ class CompleteViewController: UIViewController {
   }
   
   override func viewDidAppear(_ animated: Bool) {
-    super.viewWillDisappear(animated)
+    super.viewDidAppear(animated)
     
     UIView.animate(withDuration: 0.5) {
       self.customAlertView.alpha = 1
+    }
+  }
+  
+  override func viewWillDisappear(_ animated: Bool) {
+    UIView.animate(withDuration: 1) {
+      self.customAlertView.alpha = 0
     }
   }
   
@@ -81,6 +87,7 @@ class CompleteViewController: UIViewController {
     
     dismissBtn.setTitle("확인", for: .normal)
     dismissBtn.backgroundColor = UIColor(red: 0, green: 0.698, blue: 0.525, alpha: 1)
+    dismissBtn.addTarget(self, action: #selector(dismissDidTapBtn), for: .touchUpInside)
   }
   
   private func setLayout() {
@@ -105,8 +112,17 @@ class CompleteViewController: UIViewController {
       dismissBtn.bottomAnchor.constraint(equalTo: customAlertView.bottomAnchor)
     ])
   }
+  deinit {
+    print(1111111111)
+  }
   
   // MARK: - Action Handler
+  @objc private func dismissDidTapBtn(_ sender: UIButton) {
+    
+    dismiss(animated: false, completion: nil)
+  }
 }
 
 // MARK: - Extension
+
+

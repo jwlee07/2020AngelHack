@@ -13,6 +13,7 @@ final class MainTabBarController: UITabBarController {
   
   let naviMainVC = UINavigationController(rootViewController: MainViewController())
   let naviChattingVC = UINavigationController (rootViewController: ChattingViewController())
+  let NoticeVC = UINavigationController (rootViewController: NoticeViewController())
   let naviMyPageVC = UINavigationController (rootViewController: MyPageViewController())
   
   
@@ -29,9 +30,14 @@ final class MainTabBarController: UITabBarController {
   func setTabBar() {
     view.backgroundColor = .systemBackground
     
-    naviMainVC.tabBarItem = UITabBarItem(title: "홈", image: UIImage(systemName: "홈"), tag: 0)
-    naviMyPageVC.tabBarItem = UITabBarItem(title: "마이페이지", image: UIImage(systemName: "마이페이지"), tag: 2)
+    naviMainVC.tabBarItem = UITabBarItem(title: "홈", image: UIImage(named: "홈_1"), tag: 0)
+    naviChattingVC.tabBarItem = UITabBarItem(title: "채팅", image: UIImage(named: "채팅_1"), tag: 1)
+    NoticeVC.tabBarItem = UITabBarItem(title: "알림", image: UIImage(named: "알림_1"), tag: 2)
+    naviMyPageVC.tabBarItem = UITabBarItem(title: "마이페이지", image: UIImage(named: "마이페이지_1"), tag: 2)
     
-    viewControllers = [naviMainVC, naviMyPageVC]
+    viewControllers = [naviMainVC, naviChattingVC, NoticeVC, naviMyPageVC]
+    
+    UITabBar.appearance().tintColor = UIColor(red: 0, green: 0.698, blue: 0.525, alpha: 1)
   }
 }
+
