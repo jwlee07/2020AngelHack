@@ -15,6 +15,7 @@
   let productResidentCategorieView = ProductResidentCategorieView()
   let productResidentDetailExplanaView = ProductResidentDetailExplanaView()
   
+  
   let productResidentTableView = UITableView()
   lazy var productResidentViewArr = [productResidentTopView, productResidentCategorieView, productResidentDetailExplanaView]
   
@@ -50,17 +51,27 @@
     super.viewDidLoad()
     setTableView()
     setUI()
-    
+  }
+  override func viewWillDisappear(_ animated: Bool) {
+    super.viewWillDisappear(animated)
+    tabBarController?.tabBar.isHidden = false
+  }
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+    productResidentTableView.reloadData()
+    tabBarController?.tabBar.isHidden = true
   }
   // MARK: - SetUp Layout
   
   func setTableView() {
+    productResidentCategorieView.delegate = self
     productResidentTableView.allowsSelection = false
     productResidentTableView.dataSource = self
     productResidentTableView.register(ProductResidentViewCell.self, forCellReuseIdentifier: ProductResidentViewCell.identifier)
   }
   
   func setUI() {
+    view.backgroundColor = .systemBackground
     
     let guide = view.safeAreaLayoutGuide
     let buttonMargin: CGFloat = 20
@@ -96,9 +107,12 @@
   @objc func didTapDismissButton(_ sender: UIButton) {
     navigationController?.popViewController(animated: true)
   }
+  override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
+    self.view.endEditing(true)
+  }
  }
  
- // MARK: -
+ // MARK: - UITableViewDataSource
  
  extension ProductResidentViewController: UITableViewDataSource {
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -114,11 +128,21 @@
     case 1:
       productResidentTableView.rowHeight = 250
     case 2:
-      productResidentTableView.rowHeight = 500
+      productResidentTableView.rowHeight = 300
     default:
       break
     }
     return residentCell
   }
  }
-
+ 
+ // MARK: - ProductResidentCategorieDelegate
+ 
+ extension ProductResidentViewController: ProductResidentCategorieDelegate {
+  func presetCategoryAgriculturaView() {
+    let categorySelecterListVC = CategorySelecterListViewController()
+    categorySelecterListVC.modalPresentationStyle = .overFullScreen
+    present(categorySelecterListVC, animated: true)
+  }
+ }
+ 

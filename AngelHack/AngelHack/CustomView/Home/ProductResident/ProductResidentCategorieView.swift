@@ -8,13 +8,19 @@
 
 import UIKit
 
+protocol ProductResidentCategorieDelegate: class {
+  func presetCategoryAgriculturaView()
+}
+
 class ProductResidentCategorieView: UIView {
   
   // MARK: - Property
   let categorieTableView = UITableView()
   
-  let categorieListArr = ["카데고리 선택", "상품명 선택", "단위", "가격", "판매 마감일"]
+  var categorieListArr = ["농/수산물", "감자", "5kg", "15,000원", "2020.07.30"]
   let presentButtonImage = UIImage(systemName: "chevron.right")?.withTintColor(.darkGray, renderingMode: .alwaysOriginal)
+  
+  weak var delegate: ProductResidentCategorieDelegate?
   
   // MARK: - init View
   override init(frame: CGRect) {
@@ -32,7 +38,9 @@ class ProductResidentCategorieView: UIView {
     
     let selfGuide = self.safeAreaLayoutGuide
     
+    categorieTableView.allowsSelection = false
     categorieTableView.dataSource = self
+    categorieTableView.delegate = self
     categorieTableView.rowHeight = 50
     categorieTableView.register(ProductResidentCategorieTableViewCell.self, forCellReuseIdentifier: ProductResidentCategorieTableViewCell.identifier)
     
@@ -58,10 +66,24 @@ extension ProductResidentCategorieView: UITableViewDataSource {
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = categorieTableView.dequeueReusableCell(withIdentifier: ProductResidentCategorieTableViewCell.identifier, for: indexPath) as! ProductResidentCategorieTableViewCell
     cell.categorieLabel.text = categorieListArr[indexPath.row]
-    cell.categorieLabel.textColor = .systemGray
     if indexPath.row < 3 {
       cell.categorieImageView.image = presentButtonImage
     }
     return cell
   }
 }
+
+// MARK: - UITableViewDelegate
+
+extension ProductResidentCategorieView: UITableViewDelegate {
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    switch indexPath.row {
+    case 0:
+      delegate?.presetCategoryAgriculturaView()
+    default:
+      break
+    }
+  }
+}
+
+

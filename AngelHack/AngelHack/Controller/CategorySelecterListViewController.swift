@@ -27,7 +27,8 @@ class CategorySelecterListViewController: UIViewController {
   
   // MARK: - Layout
   private func setUI() {
-    view.backgroundColor = UIColor.black.withAlphaComponent(0.1)
+    view.backgroundColor = UIColor.black.withAlphaComponent(0.5)
+    
     view.addSubview(collectionView)
     
     collectionView.backgroundColor = .systemBackground
@@ -78,7 +79,6 @@ extension CategorySelecterListViewController: UICollectionViewDelegateFlowLayout
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
     let itemSpasing: CGFloat = 8
     let itemCount: CGFloat = 3
-//    let inset = UIEdgeInsets(top: 0, left: 10, bottom: 10, right: 10)
     
     let contentHeight = collectionView.frame.height - (itemSpasing * (itemCount - 1))
     let contentWidth = collectionView.frame.width - (itemSpasing * (itemCount - 1))
@@ -86,8 +86,4 @@ extension CategorySelecterListViewController: UICollectionViewDelegateFlowLayout
     let cellHeight = contentHeight / itemCount
     return CGSize(width: cellWidth - 10, height: cellHeight - 17)
   }
-//  func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-//
-//    return 8
-//  }
 }

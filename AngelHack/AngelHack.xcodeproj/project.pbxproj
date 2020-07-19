@@ -44,6 +44,11 @@
 		498B060924BC60C60027BFA7 /* SettingRegionNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498B060824BC60C60027BFA7 /* SettingRegionNavigationView.swift */; };
 		498B060B24BC61010027BFA7 /* SettingRegionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498B060A24BC61010027BFA7 /* SettingRegionViewController.swift */; };
 		4993223924BC366A00279FCC /* NoticeTopCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4993223824BC366A00279FCC /* NoticeTopCustomView.swift */; };
+		49C3F92724C410C0007156EA /* SellerProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C3F92624C410C0007156EA /* SellerProfileView.swift */; };
+		49C3F92A24C41607007156EA /* MyPageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C3F92924C41607007156EA /* MyPageTableViewCell.swift */; };
+		49C3F92C24C430CD007156EA /* SellerHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C3F92B24C430CD007156EA /* SellerHistoryView.swift */; };
+		49C3F92E24C43CAE007156EA /* SellerCategoryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C3F92D24C43CAE007156EA /* SellerCategoryListView.swift */; };
+		49C3F93024C43F62007156EA /* SellerCategoryListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C3F92F24C43F62007156EA /* SellerCategoryListTableViewCell.swift */; };
 		CEFB4C9024C2EDF100457EC5 /* MainCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFB4C8F24C2EDF100457EC5 /* MainCollectionViewCell.swift */; };
 		CEFB4C9224C31C5600457EC5 /* DangerousViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFB4C9124C31C5600457EC5 /* DangerousViewController.swift */; };
 		CEFB4C9524C31EE400457EC5 /* DangerousTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFB4C9424C31EE400457EC5 /* DangerousTopView.swift */; };
@@ -92,6 +97,11 @@
 		498B060824BC60C60027BFA7 /* SettingRegionNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingRegionNavigationView.swift; sourceTree = "<group>"; };
 		498B060A24BC61010027BFA7 /* SettingRegionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingRegionViewController.swift; sourceTree = "<group>"; };
 		4993223824BC366A00279FCC /* NoticeTopCustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeTopCustomView.swift; sourceTree = "<group>"; };
+		49C3F92624C410C0007156EA /* SellerProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellerProfileView.swift; sourceTree = "<group>"; };
+		49C3F92924C41607007156EA /* MyPageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageTableViewCell.swift; sourceTree = "<group>"; };
+		49C3F92B24C430CD007156EA /* SellerHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellerHistoryView.swift; sourceTree = "<group>"; };
+		49C3F92D24C43CAE007156EA /* SellerCategoryListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellerCategoryListView.swift; sourceTree = "<group>"; };
+		49C3F92F24C43F62007156EA /* SellerCategoryListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellerCategoryListTableViewCell.swift; sourceTree = "<group>"; };
 		CEFB4C8F24C2EDF100457EC5 /* MainCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCollectionViewCell.swift; sourceTree = "<group>"; };
 		CEFB4C9124C31C5600457EC5 /* DangerousViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DangerousViewController.swift; sourceTree = "<group>"; };
 		CEFB4C9424C31EE400457EC5 /* DangerousTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DangerousTopView.swift; sourceTree = "<group>"; };
@@ -202,9 +212,9 @@
 		4943177724BAF52D0032D125 /* CustomView */ = {
 			isa = PBXGroup;
 			children = (
+				49C3F92524C40FFF007156EA /* MyPage */,
 				498B05FE24BC53490027BFA7 /* Home */,
 				498B05FF24BC53690027BFA7 /* Notice */,
-				49C1B55B24BD68B2003ACBDC /* MyPage */,
 				498B060224BC53E70027BFA7 /* CustomImage */,
 			);
 			path = CustomView;
@@ -286,11 +296,24 @@
 			path = SettingRegion;
 			sourceTree = "<group>";
 		};
-		49C1B55B24BD68B2003ACBDC /* MyPage */ = {
+		49C3F92524C40FFF007156EA /* MyPage */ = {
 			isa = PBXGroup;
 			children = (
+				49C3F92624C410C0007156EA /* SellerProfileView.swift */,
+				49C3F92B24C430CD007156EA /* SellerHistoryView.swift */,
+				49C3F92D24C43CAE007156EA /* SellerCategoryListView.swift */,
+				49C3F92824C415DB007156EA /* CustomCell */,
 			);
 			path = MyPage;
+			sourceTree = "<group>";
+		};
+		49C3F92824C415DB007156EA /* CustomCell */ = {
+			isa = PBXGroup;
+			children = (
+				49C3F92F24C43F62007156EA /* SellerCategoryListTableViewCell.swift */,
+				49C3F92924C41607007156EA /* MyPageTableViewCell.swift */,
+			);
+			path = CustomCell;
 			sourceTree = "<group>";
 		};
 		49FC692E24C032C2006CA2DF /* ProductDetail */ = {
@@ -403,6 +426,7 @@
 			files = (
 				4993223924BC366A00279FCC /* NoticeTopCustomView.swift in Sources */,
 				496A5C5C24C2DF8100A0E3DF /* FilterCollectionView.swift in Sources */,
+				49C3F92724C410C0007156EA /* SellerProfileView.swift in Sources */,
 				4922DDD324C1D0BE0063C88A /* ProductResidentCategorieView.swift in Sources */,
 				496A5C5E24C2DFD600A0E3DF /* FilterCollectionViewCell.swift in Sources */,
 				4943177024BAE7830032D125 /* ChattingViewController.swift in Sources */,
@@ -419,26 +443,29 @@
 				494F90A224C33BDA00EFBC4F /* ProductResidentViewCell.swift in Sources */,
 				4943176C24BAE52C0032D125 /* ViewController.swift in Sources */,
 				4921918924C30DA3000D19FA /* MainCollectionCustomView.swift in Sources */,
+				49C3F93024C43F62007156EA /* SellerCategoryListTableViewCell.swift in Sources */,
 				494F90A024C3350F00EFBC4F /* ProductResidentDetailExplanaView.swift in Sources */,
 				49239C2B24BDDDC100533DEA /* ProductDetailImageCustomView.swift in Sources */,
 				498B060924BC60C60027BFA7 /* SettingRegionNavigationView.swift in Sources */,
 				4943176624BACD920032D125 /* MainTabBarController.swift in Sources */,
+				49C3F92E24C43CAE007156EA /* SellerCategoryListView.swift in Sources */,
 				4943176E24BAE7140032D125 /* MainViewController.swift in Sources */,
 				498B060124BC538C0027BFA7 /* CustomNavigationBarView.swift in Sources */,
 				492E481924C07D80007D7A39 /* ProductDetailReasonView.swift in Sources */,
 				4922DDCE24C1AD370063C88A /* ProductResidentViewController.swift in Sources */,
 				4922DDD124C1AF5D0063C88A /* ProductResidentTopView.swift in Sources */,
+				49C3F92A24C41607007156EA /* MyPageTableViewCell.swift in Sources */,
 				49771A2024C2BFC6007B1449 /* ProductResidentCategorieTableViewCell.swift in Sources */,
 				4943177624BAE8830032D125 /* NoticeViewController.swift in Sources */,
 				4943178324BC15E10032D125 /* Data.swift in Sources */,
 				498B060B24BC61010027BFA7 /* SettingRegionViewController.swift in Sources */,
 				CEFB4C9924C3813D00457EC5 /* CategorySelecterListViewController.swift in Sources */,
+				49C3F92C24C430CD007156EA /* SellerHistoryView.swift in Sources */,
 				4943177424BAE7C00032D125 /* MyPageViewController.swift in Sources */,
 				49239C2D24BEF25500533DEA /* DetailTestView.swift in Sources */,
 				498B060724BC60A30027BFA7 /* SettingRegionBodyView.swift in Sources */,
 				49239C2924BDDD9F00533DEA /* ProductDetailViewController.swift in Sources */,
 				CEFB4C9524C31EE400457EC5 /* DangerousTopView.swift in Sources */,
-				4943177924BAF5D20032D125 /* MainCollectionCustomView.swift in Sources */,
 				494F909E24C3271C00EFBC4F /* LaunchScreenViewController.swift in Sources */,
 				492E481324C05C87007D7A39 /* ProductInfoView.swift in Sources */,
 				CEFB4C9224C31C5600457EC5 /* DangerousViewController.swift in Sources */,

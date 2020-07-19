@@ -73,18 +73,21 @@ class MainViewController: UIViewController {
   
   @objc private func didTapMapSearchButton(_ sender: UIButton) {
     let settingVC = SettingRegionViewController()
+    
     present(settingVC, animated: true)
   }
   
   @objc private func addBtnDidTap(_ sender: UIButton) {
-    print(111)
+    let productResidentViewController = ProductResidentViewController()
+    
+    navigationController?.pushViewController(productResidentViewController, animated: true)
   }
-  
 }
 
 extension MainViewController: MainCollectionCustomViewDelegate {
   func nextView() {
     let productDetailViewController = ProductDetailViewController()
+    
     navigationController?.pushViewController(productDetailViewController, animated: true)
   }
 }

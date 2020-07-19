@@ -17,12 +17,13 @@ class ProductResidentTopView: UIView {
     let imageVIew = UIImageView()
     imageVIew.layer.cornerRadius = 15
     imageVIew.clipsToBounds = true
+    imageVIew.backgroundColor = .systemGray
     return imageVIew
   }()
   
-  let productCountLabel: UILabel = {
+  var productCountLabel: UILabel = {
     let label = UILabel()
-    label.text = "10/10"
+    label.text = "3/10"
     label.textColor = .white
     label.font = UIFont.boldSystemFont(ofSize: 15)
     return label
@@ -30,7 +31,7 @@ class ProductResidentTopView: UIView {
   
   let productNameTextfield: UITextField = {
     let textfield = UITextField()
-    textfield.placeholder = "글 제목"
+    textfield.text = "오늘 수확한 감자 팝니다."
     textfield.borderStyle = .roundedRect
     return textfield
   }()
@@ -59,12 +60,12 @@ class ProductResidentTopView: UIView {
     let textfieldHeight: CGFloat = 50
     let selfGuide = self.safeAreaLayoutGuide
     
-    productImageView.image = UIImage(named: "못생긴감자_1")
-    
     [productImageView, productCountLabel, productNameTextfield].forEach {
       self.addSubview($0)
       $0.translatesAutoresizingMaskIntoConstraints = false
     }
+    
+    productImageView.image = UIImage(named: "못생긴감자_1")
     
     NSLayoutConstraint.activate([
       productImageView.topAnchor.constraint(equalTo: selfGuide.topAnchor),
