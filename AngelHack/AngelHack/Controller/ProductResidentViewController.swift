@@ -90,26 +90,6 @@
       productResidentCompleteButton.bottomAnchor.constraint(equalTo: view.bottomAnchor),
       productResidentCompleteButton.heightAnchor.constraint(equalToConstant: buttonHeight)
     ])
-    
-//    [productResidentTopView, productResidentCategorieView, productResidentDetailExplanaView].forEach {
-//      productResidentTableView.addSubview($0)
-//      $0.translatesAutoresizingMaskIntoConstraints = false
-//
-//      $0.leadingAnchor.constraint(equalTo: productResidentScrollView.leadingAnchor).isActive = true
-//      $0.trailingAnchor.constraint(equalTo: productResidentScrollView.trailingAnchor).isActive = true
-//    }
-    
-//    NSLayoutConstraint.activate([
-//      productResidentTopView.topAnchor.constraint(equalTo: productResidentScrollView.topAnchor),
-//      productResidentTopView.centerXAnchor.constraint(equalTo: productResidentScrollView.centerXAnchor),
-//      productResidentTopView.heightAnchor.constraint(equalTo: productResidentScrollView.heightAnchor, multiplier: 0.3),
-//
-//      productResidentCategorieView.topAnchor.constraint(equalTo: productResidentTopView.bottomAnchor, constant: margin),
-//      productResidentCategorieView.heightAnchor.constraint(equalTo: productResidentScrollView.heightAnchor, multiplier: 0.45),
-//
-//      productResidentDetailExplanaView.topAnchor.constraint(equalTo: productResidentCategorieView.bottomAnchor),
-//      productResidentDetailExplanaView.heightAnchor.constraint(equalTo: productResidentScrollView.heightAnchor, multiplier: 0.5)
-//    ])
   }
   
   // MARK: - Action Button
