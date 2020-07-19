@@ -62,8 +62,8 @@ class MainViewController: UIViewController {
     ])
     
     NSLayoutConstraint.activate([
-      addBtn.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15),
-      addBtn.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -15),
+      addBtn.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
+      addBtn.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20),
       addBtn.widthAnchor.constraint(equalToConstant: 56),
       addBtn.heightAnchor.constraint(equalToConstant: 56)
     ])
@@ -79,7 +79,12 @@ class MainViewController: UIViewController {
   
   @objc private func addBtnDidTap(_ sender: UIButton) {
     let productResidentViewController = ProductResidentViewController()
+<<<<<<< HEAD
+//    productResidentViewController.modalPresentationStyle = .overFullScreen
+//    present(productResidentViewController, animated: false)
+=======
     
+>>>>>>> d469f37c444a7d0478909195b2fbf0966d55afd5
     navigationController?.pushViewController(productResidentViewController, animated: true)
   }
 }
