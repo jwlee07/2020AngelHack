@@ -19,6 +19,7 @@ class MainViewController: UIViewController {
   let customNavigationBarView = CustomNavigationBarView()
   let collectionViewLayout = UICollectionViewFlowLayout()
   lazy var mainCollectionView = MainCollectionCustomView(frame: .zero, superViewWidth: view.frame.width, superViewHeight: view.frame.height)
+  private let addBtn = UIButton()
   
   // MARK: - LifeCycle
   
@@ -33,22 +34,25 @@ class MainViewController: UIViewController {
   func setMainViewUI() {
     
     mainCollectionView.delegate = self
-    
+    customNavigationBarView.delegate = self
     navigationController?.navigationBar.isHidden = true
     
     let guide = view.safeAreaLayoutGuide
     
-    view.addSubview(mainCollectionView)
-    [customNavigationBarView, mainCollectionView].forEach {
+    addBtn.setImage(UIImage(named: "글쓰기"), for: .normal)
+    addBtn.backgroundColor = UIColor(red: 0, green: 0.698, blue: 0.525, alpha: 1)
+    addBtn.layer.cornerRadius = 56 / 2
+    addBtn.addTarget(self, action: #selector(addBtnDidTap), for: .touchUpInside)
+    
+    [customNavigationBarView, mainCollectionView, addBtn].forEach {
       view.addSubview($0)
       $0.translatesAutoresizingMaskIntoConstraints = false
     }
-      NSLayoutConstraint.activate([
-        customNavigationBarView.topAnchor.constraint(equalTo: guide.topAnchor),
-        customNavigationBarView.leadingAnchor.constraint(equalTo: guide.leadingAnchor, constant: 10),
-        customNavigationBarView.trailingAnchor.constraint(equalTo: guide.trailingAnchor, constant: -10),
-        customNavigationBarView.heightAnchor.constraint(equalToConstant: view.frame.height / 3.6)
-      ])
+    NSLayoutConstraint.activate([
+      customNavigationBarView.topAnchor.constraint(equalTo: guide.topAnchor),
+      customNavigationBarView.leadingAnchor.constraint(equalTo: guide.leadingAnchor, constant: 10),
+      customNavigationBarView.trailingAnchor.constraint(equalTo: guide.trailingAnchor, constant: -10)
+    ])
     
     NSLayoutConstraint.activate([
       mainCollectionView.topAnchor.constraint(equalTo: customNavigationBarView.bottomAnchor, constant: 10),
@@ -56,13 +60,24 @@ class MainViewController: UIViewController {
       mainCollectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
       mainCollectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
     ])
+    
+    NSLayoutConstraint.activate([
+      addBtn.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15),
+      addBtn.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -15),
+      addBtn.widthAnchor.constraint(equalToConstant: 56),
+      addBtn.heightAnchor.constraint(equalToConstant: 56)
+    ])
   }
   
   // MARK: - Action
   
-  @objc func didTapMapSearchButton(_ sender: UIButton) {
+  @objc private func didTapMapSearchButton(_ sender: UIButton) {
     let settingVC = SettingRegionViewController()
     present(settingVC, animated: true)
+  }
+  
+  @objc private func addBtnDidTap(_ sender: UIButton) {
+    print(111)
   }
   
 }
@@ -73,4 +88,13 @@ extension MainViewController: MainCollectionCustomViewDelegate {
     navigationController?.pushViewController(productDetailViewController, animated: true)
   }
 }
+
+extension MainViewController: CustomNavigationBarViewDelegate {
+  func nextViewDangerous() {
+    let dangerousViewController = DangerousViewController()
+    
+    navigationController?.pushViewController(dangerousViewController, animated: true)
+  }
+}
+
 
