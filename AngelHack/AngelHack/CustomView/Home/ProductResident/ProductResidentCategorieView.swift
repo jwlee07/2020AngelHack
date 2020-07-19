@@ -13,7 +13,7 @@ class ProductResidentCategorieView: UIView {
   // MARK: - Property
   let categorieTableView = UITableView()
   
-  let categorieListArr = ["농/수산물", "감자", "5kg", "15,000원", "2020.07.30"]
+  let categorieListArr = ["카데고리 선택", "상품명 선택", "단위", "가격", "판매 마감일"]
   let presentButtonImage = UIImage(systemName: "chevron.right")?.withTintColor(.darkGray, renderingMode: .alwaysOriginal)
   
   // MARK: - init View
@@ -58,6 +58,7 @@ extension ProductResidentCategorieView: UITableViewDataSource {
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = categorieTableView.dequeueReusableCell(withIdentifier: ProductResidentCategorieTableViewCell.identifier, for: indexPath) as! ProductResidentCategorieTableViewCell
     cell.categorieLabel.text = categorieListArr[indexPath.row]
+    cell.categorieLabel.textColor = .systemGray
     if indexPath.row < 3 {
       cell.categorieImageView.image = presentButtonImage
     }

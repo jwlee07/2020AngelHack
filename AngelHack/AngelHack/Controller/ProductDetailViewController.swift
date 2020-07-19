@@ -83,6 +83,7 @@ class ProductDetailViewController: UIViewController {
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
     detailTableVIew.reloadData()
+    tabBarController?.tabBar.isHidden = true
   }
   
   override func viewDidLayoutSubviews() {
@@ -90,6 +91,11 @@ class ProductDetailViewController: UIViewController {
     productInfoView.sellerImageView.layer.cornerRadius = productInfoView.sellerImageView.frame.width / 2
     productInfoView.sellerImageView.clipsToBounds = true
     
+  }
+  
+  override func viewWillDisappear(_ animated: Bool) {
+    super.viewWillDisappear(animated)
+    tabBarController?.tabBar.isHidden = false
   }
   
   // MARK: - SetupLayout
