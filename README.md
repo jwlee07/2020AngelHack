@@ -5,11 +5,11 @@
 
 ## 참여자 목록.
 
-- 기획 : 박예진 [[gitGub]](https://github.com/parkyejini)
-- 디자인 : 정용섭 [[gitGub]](https://github.com/jeongyongseob)
-- 디자인 : 남주연 [[gitGub]](https://github.com/juyeonnam)
-- 개발자 : 성단빈 [[gitGub]](https://github.com/parkyejini)
-- 개발자 : 이진욱 [[gitGub]](https://github.com/jwlee07)
+- 기획 : 박예진 [[gitHub]](https://github.com/parkyejini)
+- 디자인 : 정용섭 [[gitHub]](https://github.com/jeongyongseob)
+- 디자인 : 남주연 [[gitHub]](https://github.com/juyeonnam)
+- 개발자 : 성단빈 [[gitHub]](https://github.com/parkyejini)
+- 개발자 : 이진욱 [[gitHub]](https://github.com/jwlee07)
 
 # B급장터
 
