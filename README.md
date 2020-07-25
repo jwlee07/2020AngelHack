@@ -8,7 +8,7 @@
 - 기획 : 박예진 [[gitHub]](https://github.com/parkyejini)
 - 디자인 : 정용섭 [[gitHub]](https://github.com/jeongyongseob)
 - 디자인 : 남주연 [[gitHub]](https://github.com/juyeonnam)
-- 개발자 : 성단빈 [[gitHub]](https://github.com/parkyejini)
+- 개발자 : 성단빈 [[gitHub]](https://github.com/danbin920404)
 - 개발자 : 이진욱 [[gitHub]](https://github.com/jwlee07), [[Blog]](https://jwlee07.github.io/)
 
 # B급장터
