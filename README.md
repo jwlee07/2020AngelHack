@@ -5,11 +5,11 @@
 
 ## 참여자 목록.
 
-- 기획 : 박예진
-- 디자인 : 정용섭
-- 디자인 : 남주연
-- 개발자 : 성단빈
-- 개발자 : 이진욱
+- 기획 : 박예진 [gitGub Link](https://github.com/parkyejini)
+- 디자인 : 정용섭 [gitGub Link](https://github.com/jeongyongseob)
+- 디자인 : 남주연 [gitGub Link](https://github.com/juyeonnam)
+- 개발자 : 성단빈 [gitGub Link](https://github.com/parkyejini)
+- 개발자 : 이진욱 [gitGub Link](https://github.com/jwlee07)
 
 # B급장터
 
