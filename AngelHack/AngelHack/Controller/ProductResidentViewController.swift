@@ -128,7 +128,7 @@
     case 1:
       productResidentTableView.rowHeight = 250
     case 2:
-      productResidentTableView.rowHeight = 300
+      productResidentTableView.rowHeight = 500
     default:
       break
     }

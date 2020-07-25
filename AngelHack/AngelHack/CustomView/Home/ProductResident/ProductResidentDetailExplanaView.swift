@@ -26,7 +26,7 @@ class ProductResidentDetailExplanaView: UIView {
     textView.layer.borderColor = UIColor.systemGray.cgColor
     textView.layer.cornerRadius = 10
     textView.clipsToBounds = true
-    textView.text = "- 5kg 기준 15~20개 정도이고 크기는 평균입니다 \n\n - 못났지만 영양은 듬뿍! 담긴 토마토 입니다.\n\n - 직접 오시면 5% 할인 해 드립니다 ^^ \n\n - 먹어보시고 구입하셔도 됩니다 !"
+    textView.text = " - 5kg 기준 15~20개 정도이고 크기는 평균입니다.\n\n - 못났지만 영양은 등뿍! 담긴 감자 입니다.\n\n - 직접 오시면 5% 할인 해 드립니다.\n\n - 먹어보시고 구입하셔도 됩니다 !~"
     return textView
   }()
   
