@@ -22,7 +22,12 @@
 
 # B급장터(App) 구현화면 및 설명.
 
+## 런처스크린
+
 ![B급장터_1](https://github.com/jwlee07/2020AngelHack/blob/develop/AngelHack/image/B%EA%B8%89%EC%9E%A5%ED%84%B0_1.png)
+
+
+- 앱 메인 View 진입 전 대기 화면입니다.
 
 
 
