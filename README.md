@@ -1,9 +1,7 @@
-# 2020AngelHack
-
-## 팀명.
+# 팀명.
 - 팀버튼즈
 
-## 참여자 목록.
+# 참여자 목록.
 
 - 기획 : 박예진 [[gitHub]](https://github.com/parkyejini)
 - 디자인 : 정용섭 [[gitHub]](https://github.com/jeongyongseob)
@@ -11,27 +9,26 @@
 - 개발자 : 성단빈 [[gitHub]](https://github.com/danbin920404)
 - 개발자 : 이진욱 [[gitHub]](https://github.com/jwlee07), [[Blog]](https://jwlee07.github.io/)
 
-# B급장터
-
 -----
 
-## App 설명
+# B급장터(App) 설명
 
 매 해 ‘못생겼다', ‘상처가 있다', ‘너무 많다' 등의 이유로 전체 수확량의 30%가량의 농작물들이 폐기됩니다.
 이 과정에서는 온실가스를 유발하는 탄소가 배출되고 이는 지구온난화를 가속화에 영향을 줍니다. 
 그러나 이 농작물들은 실제로 유통되는 상품들과 품질의 차이가 거의 없습니다. 
 b급장터는 이렇게 버려지는 농작물들을 판매하여 소비자는 저렴한 가격에 상품을 구매와 동시에 낭비되는 농작물을 줄이는 가치있는 소비를 할 수 있고 판매자에게는 버려지는 상품들을 판매하여 손해를 줄일 수 있는 서비스입니다.
 
+<img src = "https://github.com/jwlee07/2020AngelHack/blob/develop/AngelHack/image/B%EA%B8%89%EC%9E%A5%ED%84%B0_1.png" width = "200" height = "100" />
+
 ![B급장터_1](https://github.com/jwlee07/2020AngelHack/blob/develop/AngelHack/image/B%EA%B8%89%EC%9E%A5%ED%84%B0_1.png)
 
-#### 로그인 페이지
+## 로그인 페이지
 
 ![B급장터_2](https://github.com/jwlee07/2020AngelHack/blob/develop/AngelHack/image/B%EA%B8%89%EC%9E%A5%ED%84%B0_2.png)
 
 로그인 페이지입니다.
 
-
-#### 홈
+## 홈
 
 ![B급장터_3](https://github.com/jwlee07/2020AngelHack/blob/develop/AngelHack/image/B%EA%B8%89%EC%9E%A5%ED%84%B0_3.png)
 
@@ -40,7 +37,7 @@ b급장터는 이렇게 버려지는 농작물들을 판매하여 소비자는 �
 그 밑으로는 현재 올라온 위기의 농작물들이 최신순으로 보여집니다.
 
 
-#### 위기의 농작물
+## 위기의 농작물
 
 ![B급장터_4](https://github.com/jwlee07/2020AngelHack/blob/develop/AngelHack/image/B%EA%B8%89%EC%9E%A5%ED%84%B0_4.png)
 
@@ -52,7 +49,7 @@ b급장터는 이렇게 버려지는 농작물들을 판매하여 소비자는 �
 그 밑으로는 해당 작물을 모아 판매하는 리스트가 보여집니다.
 
 
-#### 상품상세
+## 상품상세
 
 ![B급장터_5](https://github.com/jwlee07/2020AngelHack/blob/develop/AngelHack/image/B%EA%B8%89%EC%9E%A5%ED%84%B0_5.png)
 
@@ -62,7 +59,7 @@ b급장터는 이렇게 버려지는 농작물들을 판매하여 소비자는 �
 채팅으로 문의하기 버튼을 통해 판매자와의 거래 진행이 가능하다.
 
 
-#### 채팅하기
+## 채팅하기
 
 ![B급장터_6](https://github.com/jwlee07/2020AngelHack/blob/develop/AngelHack/image/B%EA%B8%89%EC%9E%A5%ED%84%B0_6.png)
 
@@ -71,7 +68,7 @@ b급장터는 이렇게 버려지는 농작물들을 판매하여 소비자는 �
 구매 확정하기까지 할 수 있습니다.
 
 
-#### 구매 확정 팝업
+## 구매 확정 팝업
 
 ![B급장터_7](https://github.com/jwlee07/2020AngelHack/blob/develop/AngelHack/image/B%EA%B8%89%EC%9E%A5%ED%84%B0_7.png)
 
@@ -81,7 +78,7 @@ b급장터는 이렇게 버려지는 농작물들을 판매하여 소비자는 �
 또 다른 농작물을 구매 할 수 있습니다.
 
 
-#### 마이페이지
+## 마이페이지
 
 ![B급장터_8](https://github.com/jwlee07/2020AngelHack/blob/develop/AngelHack/image/B%EA%B8%89%EC%9E%A5%ED%84%B0_8.png)
 
