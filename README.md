@@ -18,7 +18,7 @@
 그러나 이 농작물들은 실제로 유통되는 상품들과 품질의 차이가 거의 없습니다. 
 b급장터는 이렇게 버려지는 농작물들을 판매하여 소비자는 저렴한 가격에 상품을 구매와 동시에 낭비되는 농작물을 줄이는 가치있는 소비를 할 수 있고 판매자에게는 버려지는 상품들을 판매하여 손해를 줄일 수 있는 서비스입니다.
 
-<img src = "https://github.com/jwlee07/2020AngelHack/blob/develop/AngelHack/image/B%EA%B8%89%EC%9E%A5%ED%84%B0_1.png" width = "300" height = "150" />
+<img src = "https://github.com/jwlee07/2020AngelHack/blob/develop/AngelHack/image/B%EA%B8%89%EC%9E%A5%ED%84%B0_1.png" width = "400" height = "250" />
 
 ![B급장터_1](https://github.com/jwlee07/2020AngelHack/blob/develop/AngelHack/image/B%EA%B8%89%EC%9E%A5%ED%84%B0_1.png)
 
