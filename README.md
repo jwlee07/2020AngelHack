@@ -59,8 +59,6 @@ b급장터는 이렇게 버려지는 농작물들을 판매하여 소비자는 �
 
 ### 위기의 농작물
 
-![B급장터_4](https://github.com/jwlee07/2020AngelHack/blob/develop/AngelHack/image/B%EA%B8%89%EC%9E%A5%ED%84%B0_4.png)
-
 <img src = "https://github.com/jwlee07/2020AngelHack/blob/develop/AngelHack/image/B%EA%B8%89%EC%9E%A5%ED%84%B0_4.png" width = "200" height = "400" />
 
 - 메인의 구하러가기를 터치하면 해당 위기 농작물이 왜 위기에 처했는지를 판매자가 판매할 상품을 업로드하면서 등록한 정보를 수집한 데이터를 기준으로 선정하여 정보를 전달하는 카드를 찾아볼 수 있습니다. 
