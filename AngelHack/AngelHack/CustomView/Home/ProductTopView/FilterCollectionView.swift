@@ -43,7 +43,7 @@ class FilterCollectionView: UIView {
     collectionView.showsHorizontalScrollIndicator = false
     collectionView.dataSource = self
     collectionView.delegate = self
-    collectionView.backgroundColor = .white
+    collectionView.backgroundColor = .systemBackground
     collectionView.register(FilterCollectionViewCell.self, forCellWithReuseIdentifier: "FilterCell")
   }
   

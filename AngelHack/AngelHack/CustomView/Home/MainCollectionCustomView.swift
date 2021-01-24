@@ -66,7 +66,6 @@ class MainCollectionCustomView: UIView {
     collectionView.dataSource = self
     collectionView.delegate = self
     collectionView.register(MainCollectionViewCell.self, forCellWithReuseIdentifier: "Custom")
-    
   }
   
   func setUI() {

@@ -80,8 +80,15 @@ class MainViewController: UIViewController {
   @objc private func addBtnDidTap(_ sender: UIButton) {
     let productResidentViewController = ProductResidentViewController()
 
+<<<<<<< HEAD
 //    productResidentViewController.modalPresentationStyle = .overFullScreen
 //    present(productResidentViewController, animated: false)
+=======
+
+//    productResidentViewController.modalPresentationStyle = .overFullScreen
+//    present(productResidentViewController, animated: false)
+
+>>>>>>> 9990ed21ecda1d774532748823daadef72f4efad
 
 //    productResidentViewController.modalPresentationStyle = .overFullScreen
 //    present(productResidentViewController, animated: false)

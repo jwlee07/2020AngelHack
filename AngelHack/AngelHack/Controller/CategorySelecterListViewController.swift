@@ -28,6 +28,7 @@ class CategorySelecterListViewController: UIViewController {
   // MARK: - Layout
   private func setUI() {
     view.backgroundColor = UIColor.black.withAlphaComponent(0.5)
+    collectionView.backgroundColor = .systemBackground
     
     view.addSubview(collectionView)
     
