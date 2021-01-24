@@ -88,6 +88,9 @@ class MainViewController: UIViewController {
 //    productResidentViewController.modalPresentationStyle = .overFullScreen
 //    present(productResidentViewController, animated: false)
 
+//    productResidentViewController.modalPresentationStyle = .overFullScreen
+//    present(productResidentViewController, animated: false)
+
     
     navigationController?.pushViewController(productResidentViewController, animated: true)
   }
